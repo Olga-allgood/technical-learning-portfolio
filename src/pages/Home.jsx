@@ -10,11 +10,14 @@ import {
   Grid,
   Layout,
   Row,
+  Space,
   Typography,
 } from "antd";
 
 import {
   ArrowRightOutlined,
+  LinkedinOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 
 import {
@@ -125,7 +128,8 @@ export default function Home() {
           style={{
             scrollMarginTop: 90,
 
-            background: "#F4F8FC",
+            background:
+              "#F4F8FC",
 
             padding: isMobile
               ? "52px 16px 64px"
@@ -145,7 +149,8 @@ export default function Home() {
                 marginTop: 0,
                 marginBottom: 32,
 
-                color: "#173B63",
+                color:
+                  "#173B63",
               }}
             >
               Featured Projects
@@ -213,7 +218,8 @@ export default function Home() {
                 marginTop: 0,
                 marginBottom: 14,
 
-                color: "#173B63",
+                color:
+                  "#173B63",
               }}
             >
               About
@@ -227,7 +233,8 @@ export default function Home() {
 
                 lineHeight: 1.75,
 
-                color: "#4b5563",
+                color:
+                  "#4b5563",
 
                 marginBottom: 22,
               }}
@@ -269,7 +276,8 @@ export default function Home() {
             <Title
               level={2}
               style={{
-                color: "#173B63",
+                color:
+                  "#173B63",
 
                 marginBottom: 10,
               }}
@@ -278,13 +286,63 @@ export default function Home() {
             </Title>
 
             <Paragraph
-              type="secondary"
               style={{
-                marginBottom: 0,
+                maxWidth: 620,
+
+                fontSize: isMobile
+                  ? 16
+                  : 17,
+
+                lineHeight: 1.7,
+
+                color:
+                  "#4b5563",
+
+                marginBottom: 20,
               }}
             >
-              Connect with me through LinkedIn,
-              GitHub, or email.
+              Interested in working together or
+              discussing technical learning and
+              instructional design? I’d be happy to
+              connect.
+            </Paragraph>
+
+            <Space
+              wrap
+              size={12}
+            >
+              <Button
+                type="primary"
+                icon={
+                  <MailOutlined />
+                }
+                href="mailto:olga.s.orlova@gmail.com"
+              >
+                Email Me
+              </Button>
+
+              <Button
+                icon={
+                  <LinkedinOutlined />
+                }
+                href="https://www.linkedin.com/in/orlovaolga/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </Button>
+            </Space>
+
+            <Paragraph
+              style={{
+                marginTop: 18,
+                marginBottom: 0,
+
+                color:
+                  "#667085",
+              }}
+            >
+              olga.s.orlova@gmail.com
             </Paragraph>
           </section>
         </main>
@@ -296,16 +354,18 @@ export default function Home() {
 
       <Footer
         style={{
-          textAlign: "center",
+          textAlign:
+            "center",
 
-          background: "#fafafa",
+          background:
+            "#fafafa",
 
           borderTop:
             "1px solid #f0f0f0",
         }}
       >
         <Text type="secondary">
-          © 2026 Olga Orlova
+          © Olga Orlova
         </Text>
       </Footer>
     </Layout>
