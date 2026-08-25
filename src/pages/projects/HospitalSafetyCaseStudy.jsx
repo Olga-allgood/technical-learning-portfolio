@@ -1,3 +1,5 @@
+// src/pages/projects/HospitalSafetyCaseStudy.jsx
+
 import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
@@ -10,7 +12,6 @@ import {
   Button,
   Card,
   Col,
-  Divider,
   Image,
   Row,
   Space,
@@ -20,7 +21,6 @@ import {
 
 import { Link } from "react-router-dom";
 
-import overviewImage from "../../assets/hospital-safety-case-study/01-ppe-training-overview.png";
 import foundationsImage from "../../assets/hospital-safety-case-study/02-ppe-foundations.png";
 
 import respiratorStep1 from "../../assets/hospital-safety-case-study/03-respirator-step-1.png";
@@ -32,7 +32,24 @@ import respiratorStep5 from "../../assets/hospital-safety-case-study/07-respirat
 import videoImage from "../../assets/hospital-safety-case-study/08-video-demonstration.png";
 import assessmentImage from "../../assets/hospital-safety-case-study/09-summative-assessment.png";
 
-const { Title, Paragraph, Text } = Typography;
+const {
+  Title,
+  Paragraph,
+  Text,
+} = Typography;
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+const blue = "#173B63";
+const mediumBlue = "#4E79A7";
+const lightBlue = "#F4F8FC";
+const textColor = "#4b5563";
+
+/* =========================================================
+   PROJECT DATA
+========================================================= */
 
 const projectUrl =
   "https://storage.googleapis.com/olgaorlovainstructionaldesign/Hospital%20Safety%20Training%20May.cpt/Hospital%20Safety%20Training%20May.cpt/index.html";
@@ -65,14 +82,18 @@ const respiratorSteps = [
   },
 ];
 
+/* =========================================================
+   SHARED STYLES
+========================================================= */
+
 const pageStyle = {
-  maxWidth: 1180,
+  maxWidth: 1100,
   margin: "0 auto",
   padding: "48px 24px 80px",
 };
 
 const sectionStyle = {
-  marginTop: 72,
+  marginTop: 58,
 };
 
 const imageStyle = {
@@ -84,47 +105,74 @@ const imageStyle = {
 const bodyTextStyle = {
   fontSize: 17,
   lineHeight: 1.75,
+  color: textColor,
 };
+
+/* =========================================================
+   COMPONENT
+========================================================= */
 
 export default function HospitalSafetyCaseStudy() {
   return (
     <main style={pageStyle}>
-      {/* BACK NAVIGATION */}
+      {/* =====================================================
+          BACK
+      ===================================================== */}
 
       <Link to="/">
         <Button
           type="text"
-          icon={<ArrowLeftOutlined />}
+          icon={
+            <ArrowLeftOutlined />
+          }
           style={{
             paddingLeft: 0,
-            marginBottom: 32,
+            marginBottom: 28,
           }}
         >
-          Back to Projects
+          Back to Portfolio
         </Button>
       </Link>
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section>
         <Text
-          type="secondary"
+          strong
           style={{
+            display: "block",
+
+            color:
+              mediumBlue,
+
             fontSize: 13,
-            letterSpacing: 1.5,
-            textTransform: "uppercase",
+
+            textTransform:
+              "uppercase",
+
+            letterSpacing:
+              "0.8px",
+
+            marginBottom: 7,
           }}
         >
-          Instructional Design Case Study
+          Procedural Learning & Assessment Case Study
         </Text>
 
         <Title
           level={1}
           style={{
-            marginTop: 10,
-            marginBottom: 16,
-            fontSize: "clamp(38px, 6vw, 64px)",
-            lineHeight: 1.05,
+            color: blue,
+
+            marginTop: 0,
+            marginBottom: 14,
+
+            fontSize:
+              "clamp(36px, 6vw, 52px)",
+
+            lineHeight: 1.08,
           }}
         >
           Hospital Safety Training
@@ -132,506 +180,68 @@ export default function HospitalSafetyCaseStudy() {
 
         <Paragraph
           style={{
-            maxWidth: 760,
+            maxWidth: 820,
+
             fontSize: 20,
+
             lineHeight: 1.65,
+
+            color:
+              textColor,
+
+            marginBottom: 24,
           }}
         >
-          A structured procedural learning experience that teaches healthcare
-          workers how to correctly don personal protective equipment through
-          visual instruction, demonstration, and summative assessment.
-        </Paragraph>
-
-        <Space wrap size={[8, 8]} style={{ marginTop: 8 }}>
-          <Tag>Adobe Captivate</Tag>
-          <Tag>Instructional Design</Tag>
-          <Tag>Procedural Learning</Tag>
-          <Tag>Video-Based Learning</Tag>
-          <Tag>Assessment Design</Tag>
-        </Space>
-
-        <div style={{ marginTop: 28 }}>
-          <Button
-            type="primary"
-            size="large"
-            href={projectUrl}
-            target="_blank"
-            rel="noreferrer"
-            icon={<PlayCircleOutlined />}
-          >
-            Experience the Project
-          </Button>
-        </div>
-      </section>
-
-      {/* PROJECT OVERVIEW */}
-
-      <section style={sectionStyle}>
-        <Row gutter={[48, 32]} align="middle">
-          <Col xs={24} md={11}>
-            <Image
-              src={overviewImage}
-              alt="Hospital Safety Training introduction screen"
-              preview={false}
-              style={imageStyle}
-            />
-          </Col>
-
-          <Col xs={24} md={13}>
-            <Title level={3} style={{ marginTop: 0 }}>
-              Project Overview
-            </Title>
-
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                marginBottom: 28,
-              }}
-            >
-              A procedural learning experience designed to help healthcare
-              workers build foundational knowledge of personal protective
-              equipment and understand the correct sequence for donning PPE.
-            </Paragraph>
-
-            <div style={{ marginBottom: 22 }}>
-              <Text strong>Audience</Text>
-
-              <Paragraph
-                type="secondary"
-                style={{
-                  marginTop: 5,
-                  marginBottom: 0,
-                }}
-              >
-                Healthcare workers who need foundational instruction on
-                correctly putting on PPE.
-              </Paragraph>
-            </div>
-
-            <div>
-              <Text strong>Learning Goal</Text>
-
-              <Paragraph
-                type="secondary"
-                style={{
-                  marginTop: 5,
-                  marginBottom: 0,
-                }}
-              >
-                Help learners recognize common PPE and understand the correct
-                sequence for donning protective equipment.
-              </Paragraph>
-            </div>
-          </Col>
-        </Row>
-      </section>
-
-      <Divider style={{ margin: "72px 0 0" }} />
-
-      {/* 01 — DESIGN CHALLENGE */}
-
-      <section style={sectionStyle}>
-        <Text
-          type="secondary"
-          style={{
-            letterSpacing: 1.5,
-            fontSize: 13,
-          }}
-        >
-          01
-        </Text>
-
-        <Title level={2}>The Design Challenge</Title>
-
-        <Paragraph
-          style={{
-            maxWidth: 800,
-            ...bodyTextStyle,
-          }}
-        >
-          PPE procedures require learners to do more than recognize equipment.
-          They need to understand a specific sequence of actions and
-          distinguish correct procedures from potentially unsafe ones.
-        </Paragraph>
-
-        <Paragraph
-          style={{
-            maxWidth: 800,
-            ...bodyTextStyle,
-          }}
-        >
-          I designed the module around a simple learning progression:
-          establish foundational knowledge, model the procedure visually,
-          reinforce it through demonstration, and evaluate whether learners
-          can recognize the correct process independently.
+          An Adobe Captivate module that teaches PPE
+          donning through structured instruction,
+          visual sequencing, video demonstration, and
+          summative assessment.
         </Paragraph>
 
         <Card
           style={{
-            marginTop: 32,
-            maxWidth: 900,
+            maxWidth: 940,
+
+            border: "none",
+
+            background:
+              lightBlue,
+
+            marginBottom: 24,
           }}
         >
-          <Row gutter={[24, 24]}>
-            <Col xs={24} sm={8}>
-              <Text strong>Learn</Text>
-              <br />
-              <Text type="secondary">Build foundational knowledge</Text>
+          <Row gutter={[24, 18]}>
+            <Col
+              xs={24}
+              md={8}
+            >
+              <MetaItem
+                label="Audience"
+                value="Healthcare workers"
+              />
             </Col>
 
-            <Col xs={24} sm={8}>
-              <Text strong>Observe</Text>
-              <br />
-              <Text type="secondary">See the procedure modeled</Text>
+            <Col
+              xs={24}
+              md={8}
+            >
+              <MetaItem
+                label="Technology"
+                value="Adobe Captivate"
+              />
             </Col>
 
-            <Col xs={24} sm={8}>
-              <Text strong>Evaluate</Text>
-              <br />
-              <Text type="secondary">Demonstrate understanding</Text>
+            <Col
+              xs={24}
+              md={8}
+            >
+              <MetaItem
+                label="Learning Strategy"
+                value="Procedural Learning · Multimedia · Assessment"
+              />
             </Col>
           </Row>
         </Card>
-      </section>
-
-      {/* 02 — FOUNDATIONAL KNOWLEDGE */}
-
-      <section style={sectionStyle}>
-        <Text
-          type="secondary"
-          style={{
-            letterSpacing: 1.5,
-            fontSize: 13,
-          }}
-        >
-          02
-        </Text>
-
-        <Title level={2}>Building Foundational Knowledge</Title>
-
-        <Row gutter={[48, 32]} align="middle" style={{ marginTop: 28 }}>
-          <Col xs={24} md={11}>
-            <Image
-              src={foundationsImage}
-              alt="PPE foundations screen showing common protective equipment"
-              preview={false}
-              style={imageStyle}
-            />
-          </Col>
-
-          <Col xs={24} md={13}>
-            <Paragraph style={bodyTextStyle}>
-              Before introducing the procedure itself, I established the
-              essential vocabulary and purpose of PPE. Learners first identify
-              common protective equipment such as gowns, respirators, goggles,
-              and gloves.
-            </Paragraph>
-
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                marginBottom: 0,
-              }}
-            >
-              This creates a shared foundation before learners move into the
-              more complex task of procedural sequencing.
-            </Paragraph>
-          </Col>
-        </Row>
-      </section>
-
-      {/* 03 — PROCEDURAL INSTRUCTION */}
-
-      <section style={sectionStyle}>
-        <Text
-          type="secondary"
-          style={{
-            letterSpacing: 1.5,
-            fontSize: 13,
-          }}
-        >
-          03
-        </Text>
-
-        <Title level={2}>
-          Breaking the Procedure into Observable Steps
-        </Title>
-
-        <Paragraph
-          style={{
-            maxWidth: 820,
-            ...bodyTextStyle,
-          }}
-        >
-          To reduce cognitive load, I broke the respirator procedure into a
-          sequence of focused visual steps. Each screen pairs a specific action
-          with a supporting image so learners can connect the written
-          instruction with the physical procedure.
-        </Paragraph>
-
-        <Paragraph
-          style={{
-            maxWidth: 820,
-            ...bodyTextStyle,
-          }}
-        >
-          Presenting the process incrementally helps learners focus on one
-          action at a time while still building a mental model of the complete
-          sequence.
-        </Paragraph>
-
-        <Row gutter={[16, 24]} style={{ marginTop: 36 }}>
-          {respiratorSteps.map((step) => (
-            <Col
-              key={step.label}
-              xs={24}
-              sm={12}
-              md={8}
-              lg={4}
-              flex="1"
-            >
-              <Image
-                src={step.image}
-                alt={`Respirator procedure step ${step.label}: ${step.title}`}
-                preview={false}
-                style={{
-                  width: "100%",
-                  borderRadius: 10,
-                  display: "block",
-                }}
-              />
-
-              <div style={{ marginTop: 12 }}>
-                <Text
-                  type="secondary"
-                  style={{
-                    fontSize: 12,
-                    letterSpacing: 1,
-                  }}
-                >
-                  STEP {step.label}
-                </Text>
-
-                <div>
-                  <Text strong>{step.title}</Text>
-                </div>
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </section>
-
-      {/* 04 — VIDEO DEMONSTRATION */}
-
-      <section style={sectionStyle}>
-        <Text
-          type="secondary"
-          style={{
-            letterSpacing: 1.5,
-            fontSize: 13,
-          }}
-        >
-          04
-        </Text>
-
-        <Title level={2}>From Visual Steps to Demonstration</Title>
-
-        <Row gutter={[48, 32]} align="middle" style={{ marginTop: 28 }}>
-          <Col xs={24} md={11}>
-            <Image
-              src={videoImage}
-              alt="Transition to PPE video demonstration"
-              preview={false}
-              style={imageStyle}
-            />
-          </Col>
-
-          <Col xs={24} md={13}>
-            <Paragraph style={bodyTextStyle}>
-              After learners review the individual steps, the module
-              transitions to video demonstration. This allows learners to see
-              the procedure performed continuously rather than only as isolated
-              steps.
-            </Paragraph>
-
-            <Paragraph style={bodyTextStyle}>
-              The progression from explanation to visual sequencing to
-              demonstration provides multiple representations of the same
-              procedure before learners are assessed.
-            </Paragraph>
-
-            <Space direction="vertical" size={12}>
-              <Text>
-                <CheckCircleOutlined /> Written procedural guidance
-              </Text>
-
-              <Text>
-                <CheckCircleOutlined /> Step-by-step visual modeling
-              </Text>
-
-              <Text>
-                <CheckCircleOutlined /> Video demonstration
-              </Text>
-            </Space>
-          </Col>
-        </Row>
-      </section>
-
-      {/* 05 — SUMMATIVE ASSESSMENT */}
-
-      <section style={sectionStyle}>
-        <Text
-          type="secondary"
-          style={{
-            letterSpacing: 1.5,
-            fontSize: 13,
-          }}
-        >
-          05
-        </Text>
-
-        <Title level={2}>Assessing Independent Understanding</Title>
-
-        <Row gutter={[48, 32]} align="middle" style={{ marginTop: 28 }}>
-          <Col xs={24} md={11}>
-            <Image
-              src={assessmentImage}
-              alt="Summative PPE assessment question"
-              preview={false}
-              style={imageStyle}
-            />
-          </Col>
-
-          <Col xs={24} md={13}>
-            <Paragraph style={bodyTextStyle}>
-              The module concludes with a six-question summative assessment
-              focused on the procedures learners have just studied and
-              observed.
-            </Paragraph>
-
-            <Paragraph style={bodyTextStyle}>
-              Unlike the guided instruction earlier in the module, the
-              assessment is intentionally evaluative. Learners submit their
-              responses without repeated attempts, allowing the assessment to
-              measure what they can identify independently after instruction.
-            </Paragraph>
-
-            <Card
-              size="small"
-              style={{
-                marginTop: 24,
-              }}
-            >
-              <Space align="start">
-                <SafetyCertificateOutlined />
-
-                <Text strong>
-                  Instruction and evaluation serve different purposes.
-                </Text>
-              </Space>
-            </Card>
-          </Col>
-        </Row>
-      </section>
-
-      {/* 06 — DEVELOPMENT */}
-
-      <section style={sectionStyle}>
-        <Text
-          type="secondary"
-          style={{
-            letterSpacing: 1.5,
-            fontSize: 13,
-          }}
-        >
-          06
-        </Text>
-
-        <Title level={2}>Development in Adobe Captivate</Title>
-
-        <Paragraph
-          style={{
-            maxWidth: 820,
-            ...bodyTextStyle,
-          }}
-        >
-          I developed the experience in Adobe Captivate, combining
-          instructional screens, procedural visuals, video, navigation, and
-          quiz interactions into a consistent learning flow.
-        </Paragraph>
-
-        <Paragraph
-          style={{
-            maxWidth: 820,
-            ...bodyTextStyle,
-          }}
-        >
-          The visual design intentionally remains restrained so that the
-          procedure stays central. Consistent layouts, typography, navigation,
-          and visual hierarchy help learners move through the module without
-          unnecessary interface complexity.
-        </Paragraph>
-      </section>
-
-      {/* DESIGN TAKEAWAY */}
-
-      <section style={sectionStyle}>
-        <Card
-          style={{
-            padding: "12px 8px",
-          }}
-        >
-          <Text
-            type="secondary"
-            style={{
-              fontSize: 13,
-              letterSpacing: 1.5,
-            }}
-          >
-            DESIGN TAKEAWAY
-          </Text>
-
-          <Title level={3} style={{ marginTop: 12 }}>
-            Matching the learning strategy to the task
-          </Title>
-
-          <Paragraph
-            style={{
-              maxWidth: 820,
-              ...bodyTextStyle,
-              marginBottom: 0,
-            }}
-          >
-            This project demonstrates a more structured instructional approach
-            than my scenario-based work. Because PPE donning is a procedural
-            task with an established sequence, I prioritized clear explanation,
-            visual modeling, demonstration, and independent assessment rather
-            than branching decision-making.
-          </Paragraph>
-        </Card>
-      </section>
-
-      {/* CTA */}
-
-      <section
-        style={{
-          marginTop: 72,
-          textAlign: "center",
-        }}
-      >
-        <Title level={2}>Explore the Learning Experience</Title>
-
-        <Paragraph
-          type="secondary"
-          style={{
-            maxWidth: 620,
-            margin: "0 auto 24px",
-            fontSize: 16,
-          }}
-        >
-          View the complete Adobe Captivate module to experience the
-          instructional sequence and assessment.
-        </Paragraph>
 
         <Button
           type="primary"
@@ -639,10 +249,603 @@ export default function HospitalSafetyCaseStudy() {
           href={projectUrl}
           target="_blank"
           rel="noreferrer"
+          icon={
+            <PlayCircleOutlined />
+          }
         >
-          Experience the Project <ArrowRightOutlined />
+          Experience the Project
         </Button>
       </section>
+
+      {/* =====================================================
+          01 — LEARNING STRATEGY
+      ===================================================== */}
+
+      <CaseSection
+        number="01"
+        title="Learning Strategy"
+      >
+        <Row
+          gutter={[44, 30]}
+          align="middle"
+        >
+          <Col
+            xs={24}
+            md={11}
+          >
+            <Image
+              src={
+                foundationsImage
+              }
+              alt="PPE foundations screen showing common protective equipment"
+              preview={false}
+              style={imageStyle}
+            />
+          </Col>
+
+          <Col
+            xs={24}
+            md={13}
+          >
+            <Paragraph
+              style={
+                bodyTextStyle
+              }
+            >
+              PPE donning is a procedural task with a
+              defined sequence. I structured the
+              experience so learners first build
+              foundational knowledge, then study the
+              procedure visually, observe it in
+              motion, and finally demonstrate
+              understanding through assessment.
+            </Paragraph>
+
+            <FlowCard>
+              <FlowStep>
+                Foundation
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Visual Steps
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Demonstration
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Assessment
+              </FlowStep>
+            </FlowCard>
+          </Col>
+        </Row>
+      </CaseSection>
+
+      {/* =====================================================
+          02 — PROCEDURAL SEQUENCING
+      ===================================================== */}
+
+      <CaseSection
+        number="02"
+        title="Procedural Sequencing"
+      >
+        <Paragraph
+          style={{
+            ...bodyTextStyle,
+
+            maxWidth: 840,
+          }}
+        >
+          I broke the respirator procedure into focused
+          visual steps so learners can connect each written
+          instruction to an observable physical action before
+          seeing the complete procedure performed.
+        </Paragraph>
+
+        <Row
+          gutter={[16, 24]}
+          style={{
+            marginTop: 32,
+          }}
+        >
+          {respiratorSteps.map(
+            (step) => (
+              <Col
+                key={
+                  step.label
+                }
+                xs={24}
+                sm={12}
+                md={8}
+                lg={4}
+                flex="1"
+              >
+                <Image
+                  src={
+                    step.image
+                  }
+                  alt={`Respirator procedure step ${step.label}: ${step.title}`}
+                  preview={
+                    false
+                  }
+                  style={{
+                    width:
+                      "100%",
+
+                    borderRadius:
+                      10,
+
+                    display:
+                      "block",
+                  }}
+                />
+
+                <div
+                  style={{
+                    marginTop:
+                      10,
+                  }}
+                >
+                  <Text
+                    type="secondary"
+                    style={{
+                      fontSize:
+                        12,
+
+                      letterSpacing:
+                        1,
+                    }}
+                  >
+                    STEP{" "}
+                    {
+                      step.label
+                    }
+                  </Text>
+
+                  <div>
+                    <Text strong>
+                      {
+                        step.title
+                      }
+                    </Text>
+                  </div>
+                </div>
+              </Col>
+            )
+          )}
+        </Row>
+      </CaseSection>
+
+      {/* =====================================================
+          03 — MULTIMEDIA DEMONSTRATION
+      ===================================================== */}
+
+      <CaseSection
+        number="03"
+        title="Multimedia Demonstration"
+      >
+        <Row
+          gutter={[44, 30]}
+          align="middle"
+        >
+          <Col
+            xs={24}
+            md={11}
+          >
+            <Image
+              src={
+                videoImage
+              }
+              alt="PPE video demonstration"
+              preview={false}
+              style={imageStyle}
+            />
+          </Col>
+
+          <Col
+            xs={24}
+            md={13}
+          >
+            <Paragraph
+              style={
+                bodyTextStyle
+              }
+            >
+              After reviewing the individual steps,
+              learners watch the procedure performed
+              continuously. The video connects the
+              segmented instruction to the complete
+              physical sequence before assessment.
+            </Paragraph>
+
+            <Space
+              direction="vertical"
+              size={10}
+            >
+              <Text>
+                <CheckCircleOutlined />{" "}
+                Written guidance
+              </Text>
+
+              <Text>
+                <CheckCircleOutlined />{" "}
+                Step-by-step visual modeling
+              </Text>
+
+              <Text>
+                <CheckCircleOutlined />{" "}
+                Continuous video demonstration
+              </Text>
+            </Space>
+          </Col>
+        </Row>
+      </CaseSection>
+
+      {/* =====================================================
+          04 — SUMMATIVE ASSESSMENT
+      ===================================================== */}
+
+      <CaseSection
+        number="04"
+        title="Summative Assessment"
+      >
+        <Row
+          gutter={[44, 30]}
+          align="middle"
+        >
+          <Col
+            xs={24}
+            md={11}
+          >
+            <Image
+              src={
+                assessmentImage
+              }
+              alt="Summative PPE assessment question"
+              preview={false}
+              style={imageStyle}
+            />
+          </Col>
+
+          <Col
+            xs={24}
+            md={13}
+          >
+            <Paragraph
+              style={
+                bodyTextStyle
+              }
+            >
+              The module concludes with a six-question
+              assessment focused on the PPE procedures
+              learners studied and observed.
+            </Paragraph>
+
+            <Paragraph
+              style={{
+                ...bodyTextStyle,
+
+                marginBottom:
+                  0,
+              }}
+            >
+              The assessment is intentionally
+              evaluative: learners submit responses
+              without repeated attempts, separating
+              instruction from performance
+              verification.
+            </Paragraph>
+
+            <Card
+              style={{
+                border:
+                  "none",
+
+                background:
+                  lightBlue,
+
+                marginTop: 22,
+              }}
+            >
+              <Space
+                align="start"
+              >
+                <SafetyCertificateOutlined
+                  style={{
+                    color:
+                      mediumBlue,
+
+                    marginTop: 4,
+                  }}
+                />
+
+                <Text
+                  strong
+                  style={{
+                    color:
+                      blue,
+                  }}
+                >
+                  Teach the procedure first; evaluate
+                  independent understanding afterward.
+                </Text>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+      </CaseSection>
+
+      {/* =====================================================
+          05 — CAPTIVATE DEVELOPMENT
+      ===================================================== */}
+
+      <CaseSection
+        number="05"
+        title="Adobe Captivate Development"
+      >
+        <Paragraph
+          style={{
+            ...bodyTextStyle,
+
+            maxWidth: 850,
+          }}
+        >
+          I developed the module in Adobe Captivate,
+          combining instructional screens, visual
+          sequencing, video, navigation, and scored quiz
+          interactions into a consistent learning flow.
+        </Paragraph>
+
+        <Space
+          wrap
+          size={[8, 8]}
+          style={{
+            marginTop: 4,
+          }}
+        >
+          {[
+            "Adobe Captivate",
+            "Procedural Learning",
+            "Multimedia",
+            "Quiz Design",
+            "Navigation",
+            "Assessment",
+          ].map(
+            (item) => (
+              <Tag
+                key={item}
+                style={{
+                  border:
+                    "none",
+
+                  background:
+                    "#EDF4FA",
+
+                  color:
+                    "#164A7B",
+
+                  padding:
+                    "5px 10px",
+                }}
+              >
+                {item}
+              </Tag>
+            )
+          )}
+        </Space>
+      </CaseSection>
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section
+        style={{
+          marginTop: 58,
+
+          paddingTop: 28,
+
+          borderTop:
+            "1px solid #e5e7eb",
+        }}
+      >
+        <Space wrap>
+          <Button
+            type="primary"
+            size="large"
+            href={projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            icon={
+              <PlayCircleOutlined />
+            }
+          >
+            Experience the Project
+          </Button>
+
+          <Link to="/">
+            <Button
+              size="large"
+              icon={
+                <ArrowLeftOutlined />
+              }
+            >
+              Back to Portfolio
+            </Button>
+          </Link>
+        </Space>
+      </section>
     </main>
+  );
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+function MetaItem({
+  label,
+  value,
+}) {
+  return (
+    <div>
+      <Text
+        strong
+        style={{
+          display:
+            "block",
+
+          color:
+            mediumBlue,
+
+          fontSize: 12,
+
+          textTransform:
+            "uppercase",
+
+          letterSpacing:
+            "0.6px",
+
+          marginBottom: 4,
+        }}
+      >
+        {label}
+      </Text>
+
+      <Text
+        style={{
+          color: blue,
+          lineHeight: 1.55,
+        }}
+      >
+        {value}
+      </Text>
+    </div>
+  );
+}
+
+/* =========================================================
+   CASE SECTION
+========================================================= */
+
+function CaseSection({
+  number,
+  title,
+  children,
+}) {
+  return (
+    <section
+      style={
+        sectionStyle
+      }
+    >
+      <Text
+        strong
+        style={{
+          display:
+            "block",
+
+          color:
+            mediumBlue,
+
+          fontSize: 12,
+
+          letterSpacing:
+            "0.8px",
+
+          marginBottom: 4,
+        }}
+      >
+        {number}
+      </Text>
+
+      <Title
+        level={2}
+        style={{
+          color: blue,
+
+          marginTop: 0,
+
+          marginBottom: 18,
+        }}
+      >
+        {title}
+      </Title>
+
+      {children}
+    </section>
+  );
+}
+
+/* =========================================================
+   FLOW CARD
+========================================================= */
+
+function FlowCard({
+  children,
+}) {
+  return (
+    <Card
+      style={{
+        border:
+          "none",
+
+        background:
+          lightBlue,
+
+        marginTop: 18,
+      }}
+      styles={{
+        body: {
+          padding: 16,
+        },
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+
+          alignItems:
+            "center",
+
+          flexWrap:
+            "wrap",
+
+          gap: 10,
+
+          color: blue,
+        }}
+      >
+        {children}
+      </div>
+    </Card>
+  );
+}
+
+/* =========================================================
+   FLOW STEP
+========================================================= */
+
+function FlowStep({
+  children,
+}) {
+  return (
+    <Text
+      strong
+      style={{
+        color: blue,
+
+        fontSize: 14,
+      }}
+    >
+      {children}
+    </Text>
   );
 }

@@ -8,7 +8,6 @@ import {
   Layout,
   Row,
   Space,
-  Tag,
   Typography,
 } from "antd";
 
@@ -17,6 +16,7 @@ import {
   CodeOutlined,
   DatabaseOutlined,
   ExperimentOutlined,
+  FileTextOutlined,
   ReadOutlined,
 } from "@ant-design/icons";
 
@@ -26,7 +26,10 @@ import {
 
 import PortfolioHeader from "../components/PortfolioHeader";
 
-const { Content, Footer } = Layout;
+const {
+  Content,
+  Footer,
+} = Layout;
 
 const {
   Title,
@@ -34,27 +37,28 @@ const {
   Paragraph,
 } = Typography;
 
-/* =========================================================
-   COLORS
-========================================================= */
-
 const blue = "#173B63";
 const mediumBlue = "#4E79A7";
 const lightBlue = "#F4F8FC";
 const textColor = "#4b5563";
 
-/* =========================================================
-   ABOUT PAGE
-========================================================= */
-
 export default function About() {
-  const navigate = useNavigate();
+  const navigate =
+    useNavigate();
 
   const screens =
     Grid.useBreakpoint();
 
   const isMobile =
     !screens.md;
+
+  const openResume = () => {
+    window.open(
+      "/Olga-Orlova-Resume.pdf",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   return (
     <Layout
@@ -69,7 +73,7 @@ export default function About() {
         <main
           style={{
             width: "100%",
-            maxWidth: 1050,
+            maxWidth: 1000,
             margin: "0 auto",
 
             padding: isMobile
@@ -77,9 +81,7 @@ export default function About() {
               : "48px 40px 88px",
           }}
         >
-          {/* =================================================
-              BACK
-          ================================================= */}
+          {/* BACK */}
 
           <Button
             type="link"
@@ -97,16 +99,15 @@ export default function About() {
             Back to Portfolio
           </Button>
 
-          {/* =================================================
-              HERO
-          ================================================= */}
+          {/* HERO */}
 
           <Text
             strong
             style={{
               display: "block",
 
-              color: mediumBlue,
+              color:
+                mediumBlue,
 
               fontSize: 13,
 
@@ -143,7 +144,7 @@ export default function About() {
 
           <Paragraph
             style={{
-              maxWidth: 900,
+              maxWidth: 820,
 
               fontSize: isMobile
                 ? 17
@@ -151,9 +152,10 @@ export default function About() {
 
               lineHeight: 1.65,
 
-              color: textColor,
+              color:
+                textColor,
 
-              marginBottom: 34,
+              marginBottom: 30,
             }}
           >
             I design learning experiences at the
@@ -162,183 +164,80 @@ export default function About() {
             development.
           </Paragraph>
 
-          {/* =================================================
-              MAIN STORY
-          ================================================= */}
-
-          <Row
-            gutter={[40, 28]}
-            align="top"
+          <Space
+            wrap
+            style={{
+              marginBottom: 38,
+            }}
           >
-            {/* LEFT — MAIN COPY */}
-
-            <Col
-              xs={24}
-              lg={16}
+            <Button
+              type="primary"
+              size="large"
+              icon={
+                <FileTextOutlined />
+              }
+              onClick={
+                openResume
+              }
             >
-              <Paragraph
-                style={bodyTextStyle}
-              >
-                My background in education gave me a
-                strong foundation in learner-centered
-                design, curriculum development, needs
-                analysis, and multimedia learning,
-                while later work in AI and software
-                engineering expanded that foundation
-                into data, APIs, React, TypeScript,
-                databases, and cloud-based systems.
-              </Paragraph>
+              View Resume
+            </Button>
 
-              <Paragraph
-                style={bodyTextStyle}
-              >
-                That combination now shapes how I
-                approach technical learning. I am
-                especially interested in building
-                experiences where learners actively
-                practice skills, make decisions,
-                receive meaningful feedback, and
-                progress based on performance rather
-                than simply consuming content.
-                Recent projects have included custom
-                React-based learning applications,
-                learning analytics, adaptive
-                recommendations, AI-generated
-                practice, and scenario-based
-                eLearning.
-              </Paragraph>
-
-              <Paragraph
-                style={{
-                  ...bodyTextStyle,
-                  marginBottom: 0,
-                }}
-              >
-                I am targeting roles where I can bring
-                together{" "}
-                <strong>
-                  learning science, technical content,
-                  data-informed design, and
-                  development
-                </strong>{" "}
-                to create learning systems that are
-                practical, measurable, and responsive
-                to learner needs.
-              </Paragraph>
-            </Col>
-
-            {/* RIGHT — POSITIONING CARD */}
-
-            <Col
-              xs={24}
-              lg={8}
+            <Button
+              size="large"
+              onClick={() =>
+                navigate("/")
+              }
             >
-              <Card
-                style={{
-                  border: "none",
+              View Projects
+            </Button>
+          </Space>
 
-                  background:
-                    lightBlue,
-
-                  borderRadius: 16,
-                }}
-              >
-                <Text
-                  strong
-                  style={{
-                    display: "block",
-
-                    color:
-                      mediumBlue,
-
-                    fontSize: 12,
-
-                    textTransform:
-                      "uppercase",
-
-                    letterSpacing:
-                      "0.7px",
-
-                    marginBottom: 12,
-                  }}
-                >
-                  Current Focus
-                </Text>
-
-                <Title
-                  level={4}
-                  style={{
-                    color: blue,
-
-                    marginTop: 0,
-
-                    marginBottom: 14,
-                  }}
-                >
-                  Technical Instructional Design &
-                  Learning Technology
-                </Title>
-
-                <Paragraph
-                  style={{
-                    color:
-                      textColor,
-
-                    lineHeight: 1.7,
-
-                    marginBottom: 16,
-                  }}
-                >
-                  Designing learning systems that
-                  connect instructional strategy with
-                  custom technology, learner data, and
-                  meaningful practice.
-                </Paragraph>
-
-                <Space
-                  wrap
-                  size={[7, 8]}
-                >
-                  {[
-                    "Technical Training",
-                    "Learning Analytics",
-                    "AI for Learning",
-                    "Scenario Design",
-                    "Custom Learning Apps",
-                  ].map(
-                    (item) => (
-                      <Tag
-                        key={item}
-                        style={{
-                          border:
-                            "none",
-
-                          background:
-                            "#ffffff",
-
-                          color:
-                            "#164A7B",
-
-                          padding:
-                            "5px 9px",
-                        }}
-                      >
-                        {item}
-                      </Tag>
-                    )
-                  )}
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-
-          {/* =================================================
-              WHAT I BRING
-          ================================================= */}
+          {/* STORY */}
 
           <section
             style={{
-              marginTop: 58,
+              maxWidth: 880,
+            }}
+          >
+            <Paragraph
+              style={
+                bodyTextStyle
+              }
+            >
+              My background in education built a
+              foundation in curriculum design, needs
+              analysis, learner support, and
+              technology-enabled instruction. Later
+              work with AI projects and software
+              engineering expanded that foundation
+              into React, TypeScript, APIs,
+              databases, and cloud-based systems.
+            </Paragraph>
+
+            <Paragraph
+              style={{
+                ...bodyTextStyle,
+                marginBottom: 0,
+              }}
+            >
+              Today I bring those areas together to
+              design technical learning experiences
+              where learners practice skills, receive
+              useful feedback, and progress based on
+              performance. My recent work includes
+              custom learning applications, learning
+              analytics, adaptive recommendations,
+              AI-generated practice, scenario-based
+              eLearning, and procedural training.
+            </Paragraph>
+          </section>
+
+          {/* CAPABILITIES */}
+
+          <section
+            style={{
+              marginTop: 54,
             }}
           >
             <Text
@@ -346,7 +245,8 @@ export default function About() {
               style={{
                 display: "block",
 
-                color: mediumBlue,
+                color:
+                  mediumBlue,
 
                 fontSize: 12,
 
@@ -369,7 +269,7 @@ export default function About() {
                 marginBottom: 22,
               }}
             >
-              A Cross-Disciplinary Skill Set
+              Learning Strategy + Technical Execution
             </Title>
 
             <Row
@@ -384,7 +284,7 @@ export default function About() {
                     <ReadOutlined />
                   }
                   title="Learning Design"
-                  text="Needs analysis, curriculum design, scaffolding, scenario-based learning, feedback design, assessment, and learner-centered practice."
+                  text="Needs analysis, technical training, scenario design, scaffolding, feedback, and assessment."
                 />
               </Col>
 
@@ -409,8 +309,8 @@ export default function About() {
                   icon={
                     <DatabaseOutlined />
                   }
-                  title="Data-Informed Learning"
-                  text="Mastery tracking, learning analytics, learner-performance data, and targeted practice recommendations."
+                  title="Learning Analytics"
+                  text="Mastery tracking, learner performance data, progress visualization, and targeted practice."
                 />
               </Col>
 
@@ -422,75 +322,20 @@ export default function About() {
                   icon={
                     <ExperimentOutlined />
                   }
-                  title="AI-Supported Learning"
-                  text="Using generative AI purposefully to create contextual, personalized practice based on learner needs."
+                  title="AI for Learning"
+                  text="Using generative AI with learner data to create contextual and personalized practice."
                 />
               </Col>
             </Row>
           </section>
-
-          {/* =================================================
-              CLOSING
-          ================================================= */}
-
-          <Card
-            style={{
-              border: "none",
-
-              background:
-                lightBlue,
-
-              marginTop: 58,
-
-              borderRadius: 16,
-            }}
-          >
-            <Title
-              level={3}
-              style={{
-                color: blue,
-
-                marginTop: 0,
-
-                marginBottom: 10,
-              }}
-            >
-              The kind of work I want to do
-            </Title>
-
-            <Paragraph
-              style={{
-                fontSize: 17,
-
-                lineHeight: 1.75,
-
-                color: textColor,
-
-                marginBottom: 0,
-              }}
-            >
-              I am most interested in roles where
-              instructional design is closely
-              connected to technology: technical
-              training, learning engineering,
-              learning experience development,
-              educational technology, and learning
-              systems design.
-            </Paragraph>
-          </Card>
         </main>
       </Content>
-
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
 
       <Footer
         style={{
           textAlign: "center",
 
-          background:
-            "#fafafa",
+          background: "#fafafa",
 
           borderTop:
             "1px solid #f0f0f0",
@@ -504,19 +349,11 @@ export default function About() {
   );
 }
 
-/* =========================================================
-   SHARED STYLES
-========================================================= */
-
 const bodyTextStyle = {
   fontSize: 17,
   lineHeight: 1.8,
   color: textColor,
 };
-
-/* =========================================================
-   STRENGTH CARD
-========================================================= */
 
 function StrengthCard({
   icon,
@@ -550,7 +387,6 @@ function StrengthCard({
         <div
           style={{
             width: 42,
-
             height: 42,
 
             flexShrink: 0,
@@ -582,7 +418,6 @@ function StrengthCard({
             level={4}
             style={{
               marginTop: 0,
-
               marginBottom: 7,
 
               color: blue,

@@ -95,7 +95,9 @@ export default function CustomerServiceCaseStudy() {
 
           <Button
             type="link"
-            icon={<ArrowLeftOutlined />}
+            icon={
+              <ArrowLeftOutlined />
+            }
             onClick={() =>
               navigate("/")
             }
@@ -115,14 +117,22 @@ export default function CustomerServiceCaseStudy() {
             strong
             style={{
               display: "block",
-              color: mediumBlue,
+
+              color:
+                mediumBlue,
+
               fontSize: 13,
-              textTransform: "uppercase",
-              letterSpacing: "0.8px",
+
+              textTransform:
+                "uppercase",
+
+              letterSpacing:
+                "0.8px",
+
               marginBottom: 7,
             }}
           >
-            Scenario-Based eLearning Case Study
+            Scenario-Based Learning Case Study
           </Text>
 
           <Title
@@ -137,15 +147,16 @@ export default function CustomerServiceCaseStudy() {
               lineHeight: 1.08,
 
               marginTop: 0,
+
               marginBottom: 12,
             }}
           >
-            Customer Service Training Module
+            Customer Service Training
           </Title>
 
           <Paragraph
             style={{
-              maxWidth: 900,
+              maxWidth: 880,
 
               fontSize: isMobile
                 ? 17
@@ -153,16 +164,16 @@ export default function CustomerServiceCaseStudy() {
 
               lineHeight: 1.65,
 
-              color: textColor,
+              color:
+                textColor,
 
               marginBottom: 24,
             }}
           >
-            A scenario-based eLearning experience that
-            gives new employees a safe environment to
-            practice difficult customer interactions,
-            make decisions, and experience the
-            consequences of their choices.
+            A scenario-based Storyline experience where
+            employees practice difficult customer interactions,
+            make decisions, and experience realistic
+            consequences and coaching feedback.
           </Paragraph>
 
           {/* QUICK SUMMARY */}
@@ -195,7 +206,7 @@ export default function CustomerServiceCaseStudy() {
                 md={8}
               >
                 <MetaItem
-                  label="Tool"
+                  label="Technology"
                   value="Articulate Storyline"
                 />
               </Col>
@@ -205,8 +216,8 @@ export default function CustomerServiceCaseStudy() {
                 md={8}
               >
                 <MetaItem
-                  label="Focus"
-                  value="Scenario-Based Learning · Action Mapping · Branching · Feedback Design"
+                  label="Learning Strategy"
+                  value="Action Mapping · Branching · Consequence-Based Feedback"
                 />
               </Col>
             </Row>
@@ -215,58 +226,67 @@ export default function CustomerServiceCaseStudy() {
           <Button
             type="primary"
             size="large"
-            icon={<ExportOutlined />}
-            onClick={openProject}
+            icon={
+              <ExportOutlined />
+            }
+            onClick={
+              openProject
+            }
           >
             Experience the Project
           </Button>
 
           {/* =================================================
-              01 — PERFORMANCE CHALLENGE
+              01 — PERFORMANCE PROBLEM
           ================================================= */}
 
           <CaseSection
             number="01"
-            title="The Performance Challenge"
+            title="The Performance Problem"
           >
-            <Paragraph
-              style={bodyTextStyle}
-            >
-              Newly hired coffee shop employees need
-              to respond effectively when customers
-              are frustrated, disappointed, or unsure
-              what to do next.
-            </Paragraph>
-
             <Paragraph
               style={{
                 ...bodyTextStyle,
+                maxWidth: 850,
                 marginBottom: 0,
               }}
             >
-              Working with a subject matter expert, I
-              identified that successful customer
-              interactions depend less on recalling
-              service rules and more on recognizing
-              customer emotions and choosing effective
-              actions in the moment.
+              New employees need to respond effectively
+              when customers are frustrated or dissatisfied.
+              Working with a coffee shop SME, I identified
+              that performance depends on recognizing the
+              situation and choosing an effective response
+              in the moment—not simply recalling service
+              rules.
             </Paragraph>
 
             <Card
               style={{
                 border: "none",
-                background: lightBlue,
+
+                background:
+                  lightBlue,
+
                 marginTop: 22,
               }}
             >
               <Text
                 strong
                 style={{
-                  display: "block",
-                  color: mediumBlue,
+                  display:
+                    "block",
+
+                  color:
+                    mediumBlue,
+
                   fontSize: 12,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.6px",
+
+                  textTransform:
+                    "uppercase",
+
+                  letterSpacing:
+                    "0.6px",
+
                   marginBottom: 6,
                 }}
               >
@@ -277,13 +297,14 @@ export default function CustomerServiceCaseStudy() {
                 level={4}
                 style={{
                   color: blue,
+
                   margin: 0,
+
                   lineHeight: 1.5,
                 }}
               >
-                Move from knowing customer-service
-                principles to making effective
-                decisions in realistic situations.
+                Workplace Situation → Decision → Consequence →
+                Feedback → Retry
               </Title>
             </Card>
           </CaseSection>
@@ -294,7 +315,7 @@ export default function CustomerServiceCaseStudy() {
 
           <CaseSection
             number="02"
-            title="From Performance Goals to Learner Actions"
+            title="From Performance Goals to Critical Behaviors"
           >
             <Row
               gutter={[36, 28]}
@@ -305,9 +326,13 @@ export default function CustomerServiceCaseStudy() {
                 md={11}
               >
                 <ScreenshotFrame
-                  image={actionMapping}
+                  image={
+                    actionMapping
+                  }
                   alt="Action mapping showing customer service behaviors, scenarios, and recommended responses"
-                  isMobile={isMobile}
+                  isMobile={
+                    isMobile
+                  }
                 />
               </Col>
 
@@ -316,29 +341,28 @@ export default function CustomerServiceCaseStudy() {
                 md={13}
               >
                 <Paragraph
-                  style={bodyTextStyle}
+                  style={
+                    bodyTextStyle
+                  }
                 >
-                  I worked with a coffee shop SME to
-                  identify behaviors that would have
-                  the greatest impact on customer
-                  experience.
+                  I used action mapping with the SME to
+                  identify the behaviors most closely tied
+                  to successful customer interactions.
                 </Paragraph>
 
                 <Paragraph
-                  style={bodyTextStyle}
+                  style={{
+                    ...bodyTextStyle,
+                    marginBottom: 14,
+                  }}
                 >
-                  Rather than organizing the course
-                  around information employees should
-                  remember, I focused the design on
-                  actions they need to perform.
+                  Those behaviors became the basis for the
+                  decisions learners practice in the course.
                 </Paragraph>
 
                 <Space
                   wrap
                   size={[8, 8]}
-                  style={{
-                    marginTop: 4,
-                  }}
                 >
                   {[
                     "Take ownership",
@@ -350,10 +374,17 @@ export default function CustomerServiceCaseStudy() {
                       <Tag
                         key={item}
                         style={{
-                          border: "none",
-                          background: "#EDF4FA",
-                          color: "#164A7B",
-                          padding: "5px 10px",
+                          border:
+                            "none",
+
+                          background:
+                            "#EDF4FA",
+
+                          color:
+                            "#164A7B",
+
+                          padding:
+                            "5px 10px",
                         }}
                       >
                         {item}
@@ -380,22 +411,16 @@ export default function CustomerServiceCaseStudy() {
               <FlowStep>
                 Scenario Decisions
               </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Customer Outcomes
-              </FlowStep>
             </FlowCard>
           </CaseSection>
 
           {/* =================================================
-              03 — SCENARIO PRACTICE
+              03 — SCENARIO DESIGN
           ================================================= */}
 
           <CaseSection
             number="03"
-            title="Scenario-Based Practice"
+            title="Scenario Design"
           >
             <Row
               gutter={[36, 28]}
@@ -406,9 +431,13 @@ export default function CustomerServiceCaseStudy() {
                 md={11}
               >
                 <ScreenshotFrame
-                  image={scenarioDecision}
+                  image={
+                    scenarioDecision
+                  }
                   alt="Customer service scenario asking the learner to choose how to respond"
-                  isMobile={isMobile}
+                  isMobile={
+                    isMobile
+                  }
                 />
               </Col>
 
@@ -417,100 +446,121 @@ export default function CustomerServiceCaseStudy() {
                 md={13}
               >
                 <Paragraph
-                  style={bodyTextStyle}
+                  style={
+                    bodyTextStyle
+                  }
                 >
-                  I translated the priority behaviors
-                  into realistic customer interactions
-                  where learners must assess the
-                  situation and choose how to respond.
+                  I translated the priority behaviors into
+                  realistic customer situations where
+                  learners must decide how to respond.
                 </Paragraph>
 
                 <Paragraph
-                  style={bodyTextStyle}
-                >
-                  Effective options represent the
-                  workplace behaviors identified
-                  during action mapping, while
-                  distractors reflect realistic
-                  mistakes an employee might make.
-                </Paragraph>
-
-                <Card
                   style={{
-                    border: "none",
-                    background: lightBlue,
+                    ...bodyTextStyle,
+                    marginBottom: 0,
                   }}
                 >
-                  <Text
-                    strong
-                    style={{
-                      color: blue,
-                      fontSize: 16,
-                    }}
-                  >
-                    Situation → Decision → Consequence
-                    → Feedback → Retry
-                  </Text>
-                </Card>
+                  Effective options represent the target
+                  workplace behaviors, while distractors
+                  reflect plausible mistakes an employee
+                  might make on the job.
+                </Paragraph>
               </Col>
             </Row>
+
+            <div
+              style={{
+                marginTop: 30,
+              }}
+            >
+              <LargeScreenshotFrame
+                image={
+                  branchingScenario
+                }
+                alt="Branching scenario diagram showing learner decisions and different customer outcomes"
+                maxWidth={980}
+              />
+            </div>
+
+            <FlowCard>
+              <FlowStep>
+                Situation
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Decision
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Branch
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Outcome
+              </FlowStep>
+            </FlowCard>
           </CaseSection>
 
           {/* =================================================
-              04 — DECISIONS, CONSEQUENCES & COACHING
+              04 — CONSEQUENCES + COACHING
           ================================================= */}
 
           <CaseSection
             number="04"
-            title="Decisions, Consequences & Coaching"
+            title="Consequences & Coaching"
           >
             <Paragraph
-              style={bodyTextStyle}
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 850,
+              }}
             >
-              Learner choices lead to different
-              outcomes. Effective decisions move the
-              interaction forward, while ineffective
-              choices reveal realistic customer
-              reactions and provide an opportunity to
-              reconsider the response.
+              Feedback is embedded in the scenario rather
+              than limited to correct or incorrect messages.
+              Customer reactions show the consequence of the
+              learner's choice, while the manager provides
+              coaching and an opportunity to retry.
             </Paragraph>
 
-            {/* BRANCHING DESIGN */}
-
-            <LargeScreenshotFrame
-              image={branchingScenario}
-              alt="Branching scenario diagram showing different learner choices and customer outcomes"
-              maxWidth={980}
-            />
-
-            {/* COACHING FEEDBACK */}
+            {/* COACHING */}
 
             <div
               style={{
-                marginTop: 30,
+                marginTop: 28,
               }}
             >
               <MiniVisualCard
                 title="Coaching Feedback"
-                image={coachingFeedback}
-                alt="Manager coaching learner after an ineffective customer service response"
-                text="Jenny, the manager, explains the underlying service principle and encourages the learner to try again."
+                image={
+                  coachingFeedback
+                }
+                alt="Manager coaching the learner after an ineffective customer service response"
+                text="The manager explains the service principle behind the response and encourages the learner to reconsider the decision."
                 maxWidth={760}
               />
             </div>
 
-            {/* DECISION TO CONSEQUENCE */}
+            {/* CONSEQUENCE */}
 
             <div
               style={{
-                marginTop: 30,
+                marginTop: 28,
               }}
             >
               <WideVisualCard
                 title="Decision to Consequence"
-                image={decisionConsequence}
-                alt="Scenario sequence showing learner decision followed by customer consequence"
-                text="Character reactions make the impact of learner choices visible rather than relying only on correct or incorrect messages."
+                image={
+                  decisionConsequence
+                }
+                alt="Scenario sequence showing a learner choice followed by a customer reaction"
+                text="Customer reactions make the impact of the learner's decision visible and connect the choice to a realistic workplace outcome."
               />
             </div>
 
@@ -528,7 +578,7 @@ export default function CustomerServiceCaseStudy() {
               <ArrowRightOutlined />
 
               <FlowStep>
-                Manager Coaching
+                Coaching
               </FlowStep>
 
               <ArrowRightOutlined />
@@ -540,31 +590,23 @@ export default function CustomerServiceCaseStudy() {
           </CaseSection>
 
           {/* =================================================
-              05 — PROTOTYPE + DEVELOPMENT
+              05 — DEVELOPMENT + ITERATION
           ================================================= */}
 
           <CaseSection
             number="05"
-            title="Prototype, Development & Iteration"
+            title="Storyline Development & Iteration"
           >
             <Paragraph
-              style={bodyTextStyle}
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 860,
+              }}
             >
-              I translated the scenarios into
-              storyboards documenting dialogue,
-              learner choices, consequences, feedback,
-              and interaction behavior before full
-              development.
-            </Paragraph>
-
-            <Paragraph
-              style={bodyTextStyle}
-            >
-              I then developed the experience in
-              Articulate Storyline using reusable
-              layouts, states, layers, triggers, and
-              variables to support consistent
-              branching interactions and navigation.
+              I storyboarded the scenarios before building
+              the experience in Articulate Storyline using
+              states, layers, triggers, variables, and
+              branching logic.
             </Paragraph>
 
             <Space
@@ -589,10 +631,17 @@ export default function CustomerServiceCaseStudy() {
                   <Tag
                     key={item}
                     style={{
-                      border: "none",
-                      background: "#EDF4FA",
-                      color: "#164A7B",
-                      padding: "5px 10px",
+                      border:
+                        "none",
+
+                      background:
+                        "#EDF4FA",
+
+                      color:
+                        "#164A7B",
+
+                      padding:
+                        "5px 10px",
                     }}
                   >
                     {item}
@@ -604,76 +653,52 @@ export default function CustomerServiceCaseStudy() {
             <Card
               style={{
                 border: "none",
-                background: lightBlue,
+
+                background:
+                  lightBlue,
               }}
             >
               <Text
                 strong
                 style={{
-                  display: "block",
-                  color: mediumBlue,
+                  display:
+                    "block",
+
+                  color:
+                    mediumBlue,
+
                   fontSize: 12,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.6px",
+
+                  textTransform:
+                    "uppercase",
+
+                  letterSpacing:
+                    "0.6px",
+
                   marginBottom: 7,
                 }}
               >
-                Iteration Through User Testing
+                User Testing
               </Text>
 
               <Paragraph
                 style={{
                   margin: 0,
-                  color: textColor,
+
+                  color:
+                    textColor,
+
                   fontSize: 16,
+
                   lineHeight: 1.7,
                 }}
               >
-                User feedback informed several design
-                decisions. I removed planned music and
-                video elements when testing showed
-                they distracted from the scenarios,
-                and I added a progress indicator to
-                give learners clearer orientation
-                throughout the experience.
+                Testing led me to remove planned media that
+                distracted from the scenarios and add a
+                progress indicator for clearer learner
+                orientation.
               </Paragraph>
             </Card>
-          </CaseSection>
-
-          {/* =================================================
-              06 — TAKEAWAY
-          ================================================= */}
-
-          <CaseSection
-            number="06"
-            title="Design Takeaway"
-          >
-            <Paragraph
-              style={bodyTextStyle}
-            >
-              The central lesson from this project was
-              that effective scenario-based learning
-              depends on meaningful decisions and
-              believable consequences—not simply
-              placing multiple-choice questions inside
-              a story.
-            </Paragraph>
-
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                marginBottom: 0,
-              }}
-            >
-              By connecting realistic workplace
-              situations, behavior-based choices,
-              emotional customer reactions, coaching,
-              and opportunities to retry, I designed a
-              learning experience that lets employees
-              practice the impact of their decisions
-              before encountering similar situations
-              on the job.
-            </Paragraph>
           </CaseSection>
 
           {/* =================================================
@@ -683,7 +708,9 @@ export default function CustomerServiceCaseStudy() {
           <div
             style={{
               marginTop: 56,
+
               paddingTop: 28,
+
               borderTop:
                 "1px solid #e5e7eb",
             }}
@@ -692,15 +719,21 @@ export default function CustomerServiceCaseStudy() {
               <Button
                 type="primary"
                 size="large"
-                icon={<ExportOutlined />}
-                onClick={openProject}
+                icon={
+                  <ExportOutlined />
+                }
+                onClick={
+                  openProject
+                }
               >
                 Experience the Project
               </Button>
 
               <Button
                 size="large"
-                icon={<ArrowLeftOutlined />}
+                icon={
+                  <ArrowLeftOutlined />
+                }
                 onClick={() =>
                   navigate("/")
                 }
@@ -718,8 +751,12 @@ export default function CustomerServiceCaseStudy() {
 
       <Footer
         style={{
-          textAlign: "center",
-          background: "#fafafa",
+          textAlign:
+            "center",
+
+          background:
+            "#fafafa",
+
           borderTop:
             "1px solid #f0f0f0",
         }}
@@ -743,7 +780,7 @@ const bodyTextStyle = {
 };
 
 /* =========================================================
-   META ITEM
+   META
 ========================================================= */
 
 function MetaItem({
@@ -755,11 +792,20 @@ function MetaItem({
       <Text
         strong
         style={{
-          display: "block",
-          color: mediumBlue,
+          display:
+            "block",
+
+          color:
+            mediumBlue,
+
           fontSize: 12,
-          textTransform: "uppercase",
-          letterSpacing: "0.6px",
+
+          textTransform:
+            "uppercase",
+
+          letterSpacing:
+            "0.6px",
+
           marginBottom: 4,
         }}
       >
@@ -790,16 +836,23 @@ function CaseSection({
   return (
     <section
       style={{
-        marginTop: 60,
+        marginTop: 58,
       }}
     >
       <Text
         strong
         style={{
-          display: "block",
-          color: mediumBlue,
+          display:
+            "block",
+
+          color:
+            mediumBlue,
+
           fontSize: 12,
-          letterSpacing: "0.8px",
+
+          letterSpacing:
+            "0.8px",
+
           marginBottom: 4,
         }}
       >
@@ -810,7 +863,9 @@ function CaseSection({
         level={2}
         style={{
           color: blue,
+
           marginTop: 0,
+
           marginBottom: 18,
         }}
       >
@@ -835,18 +890,27 @@ function ScreenshotFrame({
     <div
       style={{
         width: "100%",
-        background: "#EEF4F9",
+
+        background:
+          "#EEF4F9",
+
         padding: 10,
+
         borderRadius: 14,
 
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
 
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
 
-        overflow: "hidden",
+        alignItems:
+          "center",
+
+        justifyContent:
+          "center",
+
+        overflow:
+          "hidden",
       }}
     >
       <img
@@ -861,10 +925,14 @@ function ScreenshotFrame({
             ? "100%"
             : "auto",
 
-          maxWidth: "100%",
+          maxWidth:
+            "100%",
 
-          objectFit: "contain",
-          display: "block",
+          objectFit:
+            "contain",
+
+          display:
+            "block",
 
           borderRadius: 8,
         }}
@@ -886,10 +954,11 @@ function LargeScreenshotFrame({
     <div
       style={{
         width: "100%",
+
         maxWidth,
 
         margin:
-          "28px auto 0",
+          "0 auto",
 
         padding: 10,
 
@@ -901,7 +970,8 @@ function LargeScreenshotFrame({
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
 
-        overflow: "hidden",
+        overflow:
+          "hidden",
       }}
     >
       <img
@@ -909,11 +979,14 @@ function LargeScreenshotFrame({
         alt={alt}
         style={{
           width: "100%",
+
           height: "auto",
 
-          display: "block",
+          display:
+            "block",
 
-          objectFit: "contain",
+          objectFit:
+            "contain",
 
           borderRadius: 8,
         }}
@@ -937,10 +1010,14 @@ function MiniVisualCard({
     <Card
       style={{
         width: "100%",
-        maxWidth,
-        margin: "0 auto",
 
-        border: "none",
+        maxWidth,
+
+        margin:
+          "0 auto",
+
+        border:
+          "none",
 
         background:
           lightBlue,
@@ -983,7 +1060,9 @@ function MiniVisualCard({
           src={image}
           alt={alt}
           style={{
-            width: "100%",
+            width:
+              "100%",
+
             height: 260,
 
             objectFit:
@@ -1007,7 +1086,8 @@ function MiniVisualCard({
             color:
               textColor,
 
-            lineHeight: 1.7,
+            lineHeight:
+              1.7,
           }}
         >
           {text}
@@ -1032,7 +1112,8 @@ function WideVisualCard({
       style={{
         width: "100%",
 
-        border: "none",
+        border:
+          "none",
 
         background:
           lightBlue,
@@ -1065,7 +1146,8 @@ function WideVisualCard({
 
       <div
         style={{
-          width: "100%",
+          width:
+            "100%",
 
           background:
             "#ffffff",
@@ -1077,9 +1159,11 @@ function WideVisualCard({
           src={image}
           alt={alt}
           style={{
-            width: "100%",
+            width:
+              "100%",
 
-            height: "auto",
+            height:
+              "auto",
 
             maxHeight: 420,
 
@@ -1107,7 +1191,8 @@ function WideVisualCard({
             color:
               textColor,
 
-            lineHeight: 1.7,
+            lineHeight:
+              1.7,
           }}
         >
           {text}
@@ -1127,12 +1212,13 @@ function FlowCard({
   return (
     <Card
       style={{
-        border: "none",
+        border:
+          "none",
 
         background:
           lightBlue,
 
-        marginTop: 24,
+        marginTop: 22,
       }}
     >
       <div

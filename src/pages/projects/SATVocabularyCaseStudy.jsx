@@ -94,7 +94,9 @@ export default function SATVocabularyCaseStudy() {
 
           <Button
             type="link"
-            icon={<ArrowLeftOutlined />}
+            icon={
+              <ArrowLeftOutlined />
+            }
             onClick={() =>
               navigate("/")
             }
@@ -114,14 +116,22 @@ export default function SATVocabularyCaseStudy() {
             strong
             style={{
               display: "block",
-              color: mediumBlue,
+
+              color:
+                mediumBlue,
+
               fontSize: 13,
-              textTransform: "uppercase",
-              letterSpacing: "0.8px",
+
+              textTransform:
+                "uppercase",
+
+              letterSpacing:
+                "0.8px",
+
               marginBottom: 7,
             }}
           >
-            AI-Supported Learning Case Study
+            AI-Powered Learning Case Study
           </Text>
 
           <Title
@@ -145,7 +155,7 @@ export default function SATVocabularyCaseStudy() {
 
           <Paragraph
             style={{
-              maxWidth: 900,
+              maxWidth: 880,
 
               fontSize: isMobile
                 ? 17
@@ -153,14 +163,16 @@ export default function SATVocabularyCaseStudy() {
 
               lineHeight: 1.65,
 
-              color: textColor,
+              color:
+                textColor,
 
               marginBottom: 24,
             }}
           >
-            An AI-supported vocabulary learning
-            experience that turns missed words into
-            personalized contextual practice.
+            A full-stack learning application that uses
+            learner performance data and Gemini AI to turn
+            missed vocabulary into personalized contextual
+            practice.
           </Paragraph>
 
           {/* QUICK SUMMARY */}
@@ -195,7 +207,7 @@ export default function SATVocabularyCaseStudy() {
                 md={8}
               >
                 <MetaItem
-                  label="Tools"
+                  label="Technology"
                   value="Next.js · TypeScript · Supabase · Gemini AI"
                 />
               </Col>
@@ -205,8 +217,8 @@ export default function SATVocabularyCaseStudy() {
                 md={8}
               >
                 <MetaItem
-                  label="Focus"
-                  value="Retrieval Practice · Personalized Learning · AI-Generated Practice"
+                  label="Learning System"
+                  value="Retrieval Practice · Performance Data · Personalized AI Practice"
                 />
               </Col>
             </Row>
@@ -226,34 +238,26 @@ export default function SATVocabularyCaseStudy() {
           </Button>
 
           {/* =================================================
-              01 — CHALLENGE
+              01 — LEARNING PROBLEM
           ================================================= */}
 
           <CaseSection
             number="01"
-            title="The Learning Challenge"
+            title="The Learning Problem"
           >
-            <Paragraph
-              style={bodyTextStyle}
-            >
-              Vocabulary learners often practice
-              definitions in isolation, but knowing a
-              definition does not always mean being
-              able to recognize or understand a word
-              in context.
-            </Paragraph>
-
             <Paragraph
               style={{
                 ...bodyTextStyle,
+                maxWidth: 840,
                 marginBottom: 0,
               }}
             >
-              I designed the experience to combine
-              retrieval practice, immediate feedback,
-              contextual examples, and personalized
-              review of words the learner finds
-              difficult.
+              Vocabulary learners may recognize a
+              definition without being able to understand
+              the word when it appears in context. I
+              designed the experience to combine retrieval
+              practice with targeted re-exposure to the
+              vocabulary each learner finds difficult.
             </Paragraph>
 
             <Card
@@ -286,7 +290,7 @@ export default function SATVocabularyCaseStudy() {
                   marginBottom: 6,
                 }}
               >
-                Design Goal
+                Learning Loop
               </Text>
 
               <Title
@@ -299,52 +303,63 @@ export default function SATVocabularyCaseStudy() {
                   lineHeight: 1.5,
                 }}
               >
-                Practice → Feedback → Review →
-                Contextual Re-Exposure
+                Practice → Capture Difficulty → Generate
+                Context → Review
               </Title>
             </Card>
           </CaseSection>
 
           {/* =================================================
-              02 — LEARNING EXPERIENCE
+              02 — PRACTICE + FEEDBACK
           ================================================= */}
 
           <CaseSection
             number="02"
-            title="Learning Experience Design"
+            title="Practice & Feedback"
           >
+            {/* PRACTICE */}
+
             <Row
               gutter={[36, 28]}
               align="middle"
             >
-              {/* IMAGE */}
-
               <Col
                 xs={24}
                 md={11}
               >
                 <ScreenshotFrame
-                  image={gamePractice}
-                  alt="SAT Vocabulary Builder game practice interface"
-                  isMobile={isMobile}
+                  image={
+                    gamePractice
+                  }
+                  alt="SAT Vocabulary Builder retrieval practice interface"
+                  isMobile={
+                    isMobile
+                  }
                 />
               </Col>
-
-              {/* TEXT */}
 
               <Col
                 xs={24}
                 md={13}
               >
-                <Paragraph
-                  style={bodyTextStyle}
+                <Title
+                  level={4}
+                  style={{
+                    color: blue,
+                    marginTop: 0,
+                  }}
                 >
-                  Learners begin with retrieval
-                  practice by identifying a target
-                  vocabulary word from its meaning.
-                  The game records correct and
-                  incorrect guesses while keeping the
-                  task focused on active recall.
+                  Retrieval Practice
+                </Title>
+
+                <Paragraph
+                  style={
+                    bodyTextStyle
+                  }
+                >
+                  Learners identify a target vocabulary
+                  word from its meaning, requiring active
+                  recall rather than passive review.
                 </Paragraph>
 
                 <Paragraph
@@ -353,10 +368,9 @@ export default function SATVocabularyCaseStudy() {
                     marginBottom: 0,
                   }}
                 >
-                  Missed vocabulary is captured by the
-                  system rather than discarded, so it
-                  can become input for later
-                  personalized practice.
+                  The system records missed vocabulary so
+                  learner difficulty becomes usable input
+                  for later personalized practice.
                 </Paragraph>
               </Col>
             </Row>
@@ -375,9 +389,13 @@ export default function SATVocabularyCaseStudy() {
                 md={11}
               >
                 <ScreenshotFrame
-                  image={feedbackReview}
-                  alt="Vocabulary feedback with meaning and contextual examples"
-                  isMobile={isMobile}
+                  image={
+                    feedbackReview
+                  }
+                  alt="Vocabulary feedback showing meaning and contextual examples"
+                  isMobile={
+                    isMobile
+                  }
                 />
               </Col>
 
@@ -392,17 +410,8 @@ export default function SATVocabularyCaseStudy() {
                     marginTop: 0,
                   }}
                 >
-                  Feedback That Supports Review
+                  Feedback for Review
                 </Title>
-
-                <Paragraph
-                  style={bodyTextStyle}
-                >
-                  After an attempt, learners can review
-                  the word's meaning and contextual
-                  examples rather than simply seeing a
-                  correct or incorrect result.
-                </Paragraph>
 
                 <Paragraph
                   style={{
@@ -410,54 +419,65 @@ export default function SATVocabularyCaseStudy() {
                     marginBottom: 0,
                   }}
                 >
-                  This creates an immediate bridge
-                  between retrieval practice and
-                  meaningful language use.
+                  After an attempt, learners can review
+                  the word's meaning and contextual
+                  examples, connecting retrieval practice
+                  to meaningful language use.
                 </Paragraph>
               </Col>
             </Row>
           </CaseSection>
 
           {/* =================================================
-              03 — AI-GENERATED PRACTICE
+              03 — AI PERSONALIZATION
           ================================================= */}
 
           <CaseSection
             number="03"
-            title="AI-Generated Personalized Practice"
+            title="Performance-Driven AI Practice"
           >
             <Paragraph
-              style={bodyTextStyle}
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 860,
+              }}
             >
-              The most important design decision was
-              connecting generative AI directly to
-              learner performance.
+              The key design decision was connecting
+              generative AI directly to learner
+              performance. Words the learner misses become
+              input for Gemini, which generates a short
+              reading that uses those words in context.
             </Paragraph>
 
             <Paragraph
-              style={bodyTextStyle}
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 860,
+                marginBottom: 0,
+              }}
             >
-              Words the learner misses become input
-              for Gemini AI, which generates a short
-              learning article that uses those words
-              in context. This gives the learner
-              another opportunity to encounter
-              difficult vocabulary through meaningful
-              language rather than isolated
-              memorization.
+              AI therefore responds to demonstrated
+              learning need rather than functioning as a
+              separate content-generation feature.
             </Paragraph>
 
             <LargeScreenshotFrame
               image={
                 aiGeneratedPractice
               }
-              alt="Gemini AI generated learning article using vocabulary words missed by the learner"
+              alt="Gemini-generated learning article using vocabulary missed by the learner"
               maxWidth={980}
             />
 
             <FlowCard>
               <FlowStep>
-                Missed Vocabulary
+                Missed Words
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Learner Data
               </FlowStep>
 
               <ArrowRightOutlined />
@@ -471,63 +491,16 @@ export default function SATVocabularyCaseStudy() {
               <FlowStep>
                 Personalized Reading
               </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Contextual Re-Exposure
-              </FlowStep>
             </FlowCard>
-
-            <Card
-              style={{
-                border: "none",
-                background: "#F7FAFD",
-                marginTop: 22,
-              }}
-            >
-              <Text
-                strong
-                style={{
-                  display: "block",
-                  color: mediumBlue,
-                  fontSize: 12,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.6px",
-                  marginBottom: 7,
-                }}
-              >
-                AI's Instructional Role
-              </Text>
-
-              <Paragraph
-                style={{
-                  margin: 0,
-
-                  color:
-                    textColor,
-
-                  fontSize: 16,
-
-                  lineHeight: 1.7,
-                }}
-              >
-                AI is not used as a standalone feature.
-                Learner performance determines the
-                vocabulary that becomes the source
-                material for the next learning
-                experience.
-              </Paragraph>
-            </Card>
           </CaseSection>
 
           {/* =================================================
-              04 — PERSONALIZED LOOP
+              04 — LEARNING HISTORY
           ================================================= */}
 
           <CaseSection
             number="04"
-            title="Personalized Learning Loop"
+            title="Persistent Learning History"
           >
             <Row
               gutter={[36, 28]}
@@ -541,8 +514,10 @@ export default function SATVocabularyCaseStudy() {
                   image={
                     learningHistory
                   }
-                  alt="SAT Vocabulary Builder learning history with correct words, missed words, and generated articles"
-                  isMobile={isMobile}
+                  alt="SAT Vocabulary Builder learning history showing vocabulary and generated articles"
+                  isMobile={
+                    isMobile
+                  }
                 />
               </Col>
 
@@ -551,21 +526,26 @@ export default function SATVocabularyCaseStudy() {
                 md={13}
               >
                 <Paragraph
-                  style={bodyTextStyle}
+                  style={
+                    bodyTextStyle
+                  }
                 >
-                  Learning continues beyond an
-                  individual game. The History
-                  experience keeps learner activity
-                  available for later review.
+                  Learning continues beyond a single
+                  practice session. Supabase stores
+                  learner-specific vocabulary, performance
+                  history, and generated reading content.
                 </Paragraph>
 
                 <Paragraph
-                  style={bodyTextStyle}
+                  style={{
+                    ...bodyTextStyle,
+                    marginBottom: 0,
+                  }}
                 >
-                  Learners can revisit correctly
-                  guessed vocabulary, missed words,
-                  personal vocabulary, and previously
-                  generated learning articles.
+                  Learners can return to missed words,
+                  correctly identified vocabulary, personal
+                  words, and previous AI-generated
+                  articles for continued review.
                 </Paragraph>
 
                 <FlowCard compact>
@@ -576,13 +556,13 @@ export default function SATVocabularyCaseStudy() {
                   <ArrowRightOutlined />
 
                   <FlowStep>
-                    Capture Difficulty
+                    Capture
                   </FlowStep>
 
                   <ArrowRightOutlined />
 
                   <FlowStep>
-                    Generate Context
+                    Generate
                   </FlowStep>
 
                   <ArrowRightOutlined />
@@ -604,15 +584,16 @@ export default function SATVocabularyCaseStudy() {
             title="Technical Implementation"
           >
             <Paragraph
-              style={bodyTextStyle}
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 860,
+              }}
             >
-              I developed the learning experience as
-              a full-stack Next.js application.
-              Supabase manages authentication,
-              learner-specific vocabulary, learning
-              history, and generated content, while
-              Gemini provides AI-generated contextual
-              practice.
+              I built the experience as a full-stack
+              Next.js application. Supabase manages
+              authentication, learner-specific data, and
+              learning history, while Gemini generates
+              contextual practice from missed vocabulary.
             </Paragraph>
 
             <Space
@@ -655,40 +636,6 @@ export default function SATVocabularyCaseStudy() {
             </Space>
 
             <ArchitectureCard />
-          </CaseSection>
-
-          {/* =================================================
-              06 — TAKEAWAY
-          ================================================= */}
-
-          <CaseSection
-            number="06"
-            title="Design Takeaway"
-          >
-            <Paragraph
-              style={bodyTextStyle}
-            >
-              The key design opportunity was using
-              learner performance as input for the
-              next learning experience.
-            </Paragraph>
-
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                marginBottom: 0,
-              }}
-            >
-              Instead of adding generative AI as a
-              separate feature, I connected it to
-              learner behavior: difficult vocabulary
-              becomes the source material for
-              personalized contextual practice. The
-              project demonstrates how instructional
-              design, learner data, AI, and custom
-              development can work together in one
-              learning system.
-            </Paragraph>
           </CaseSection>
 
           {/* =================================================
@@ -741,7 +688,8 @@ export default function SATVocabularyCaseStudy() {
 
       <Footer
         style={{
-          textAlign: "center",
+          textAlign:
+            "center",
 
           background:
             "#fafafa",
@@ -825,7 +773,7 @@ function CaseSection({
   return (
     <section
       style={{
-        marginTop: 60,
+        marginTop: 58,
       }}
     >
       <Text
@@ -852,7 +800,9 @@ function CaseSection({
         level={2}
         style={{
           color: blue,
+
           marginTop: 0,
+
           marginBottom: 18,
         }}
       >
@@ -945,7 +895,7 @@ function LargeScreenshotFrame({
         maxWidth,
 
         margin:
-          "28px auto 0",
+          "26px auto 0",
 
         padding: 10,
 
@@ -992,14 +942,15 @@ function FlowCard({
   return (
     <Card
       style={{
-        border: "none",
+        border:
+          "none",
 
         background:
           lightBlue,
 
         marginTop: compact
           ? 18
-          : 24,
+          : 22,
       }}
       styles={{
         body: {
@@ -1016,10 +967,9 @@ function FlowCard({
           alignItems:
             "center",
 
-          justifyContent:
-            compact
-              ? "flex-start"
-              : "center",
+          justifyContent: compact
+            ? "flex-start"
+            : "center",
 
           flexWrap:
             "wrap",
@@ -1067,9 +1017,33 @@ function ArchitectureCard() {
     <Card
       style={{
         border: "none",
-        background: lightBlue,
+
+        background:
+          lightBlue,
       }}
     >
+      <Text
+        strong
+        style={{
+          display: "block",
+
+          color:
+            mediumBlue,
+
+          fontSize: 12,
+
+          textTransform:
+            "uppercase",
+
+          letterSpacing:
+            "0.6px",
+
+          marginBottom: 14,
+        }}
+      >
+        Learning System Architecture
+      </Text>
+
       <Row
         gutter={[12, 12]}
         align="middle"
@@ -1084,21 +1058,23 @@ function ArchitectureCard() {
         <Col>
           <ArrowRightOutlined
             style={{
-              color: mediumBlue,
+              color:
+                mediumBlue,
             }}
           />
         </Col>
 
         <Col>
           <ArchitectureStep>
-            Next.js
+            Performance Data
           </ArchitectureStep>
         </Col>
 
         <Col>
           <ArrowRightOutlined
             style={{
-              color: mediumBlue,
+              color:
+                mediumBlue,
             }}
           />
         </Col>
@@ -1112,7 +1088,8 @@ function ArchitectureCard() {
         <Col>
           <ArrowRightOutlined
             style={{
-              color: mediumBlue,
+              color:
+                mediumBlue,
             }}
           />
         </Col>
@@ -1126,7 +1103,8 @@ function ArchitectureCard() {
         <Col>
           <ArrowRightOutlined
             style={{
-              color: mediumBlue,
+              color:
+                mediumBlue,
             }}
           />
         </Col>
@@ -1147,7 +1125,8 @@ function ArchitectureStep({
   return (
     <Tag
       style={{
-        border: "none",
+        border:
+          "none",
 
         background:
           "#ffffff",
@@ -1159,7 +1138,8 @@ function ArchitectureStep({
 
         margin: 0,
 
-        fontWeight: 600,
+        fontWeight:
+          600,
       }}
     >
       {children}

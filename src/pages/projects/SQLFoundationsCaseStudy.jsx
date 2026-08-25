@@ -30,7 +30,6 @@ import learningAnalytics from "../../assets/sql-case-study/06-learning-analytics
 import adaptiveRecommendation from "../../assets/sql-case-study/07-adaptive-recommendation.png";
 
 const { Content, Footer } = Layout;
-
 const { Title, Text, Paragraph } = Typography;
 
 /* =========================================================
@@ -50,6 +49,7 @@ const STANDARD_IMAGE_HEIGHT = 300;
 
 export default function SQLFoundationsCaseStudy() {
   const navigate = useNavigate();
+
   const screens = Grid.useBreakpoint();
   const isMobile = !screens.md;
 
@@ -76,6 +76,7 @@ export default function SQLFoundationsCaseStudy() {
             width: "100%",
             maxWidth: 1100,
             margin: "0 auto",
+
             padding: isMobile
               ? "32px 18px 64px"
               : "48px 40px 88px",
@@ -112,15 +113,20 @@ export default function SQLFoundationsCaseStudy() {
               marginBottom: 7,
             }}
           >
-            Technical Learning Case Study
+            Technical Learning & Analytics Case Study
           </Text>
 
           <Title
             level={1}
             style={{
               color: blue,
-              fontSize: isMobile ? 34 : 48,
+
+              fontSize: isMobile
+                ? 34
+                : 48,
+
               lineHeight: 1.08,
+
               marginTop: 0,
               marginBottom: 12,
             }}
@@ -131,16 +137,23 @@ export default function SQLFoundationsCaseStudy() {
           <Paragraph
             style={{
               maxWidth: 880,
-              fontSize: isMobile ? 17 : 20,
+
+              fontSize: isMobile
+                ? 17
+                : 20,
+
               lineHeight: 1.65,
+
               color: textColor,
+
               marginBottom: 24,
             }}
           >
-            A scaffolded, gamified SQL learning system that
-            combines technical practice, learning analytics,
-            and targeted recommendations to help beginners
-            move toward independent problem solving.
+            A custom React learning system that combines
+            scaffolded SQL practice, mastery analytics, and
+            targeted recommendations to move beginners from
+            syntax recognition toward independent problem
+            solving.
           </Paragraph>
 
           {/* QUICK SUMMARY */}
@@ -148,30 +161,42 @@ export default function SQLFoundationsCaseStudy() {
           <Card
             style={{
               maxWidth: 960,
+
               border: "none",
+
               background: lightBlue,
+
               marginBottom: 24,
             }}
           >
             <Row gutter={[24, 18]}>
-              <Col xs={24} md={8}>
+              <Col
+                xs={24}
+                md={8}
+              >
                 <MetaItem
                   label="Audience"
                   value="Beginning SQL learners"
                 />
               </Col>
 
-              <Col xs={24} md={8}>
+              <Col
+                xs={24}
+                md={8}
+              >
                 <MetaItem
-                  label="Tools"
+                  label="Technology"
                   value="React · JavaScript · SQL · Ant Design"
                 />
               </Col>
 
-              <Col xs={24} md={8}>
+              <Col
+                xs={24}
+                md={8}
+              >
                 <MetaItem
-                  label="Focus"
-                  value="Scaffolding · Learning Analytics · Gamification · Adaptive Recommendation"
+                  label="Learning System"
+                  value="Scaffolding · Mastery Analytics · Gamification · Targeted Practice"
                 />
               </Col>
             </Row>
@@ -187,30 +212,28 @@ export default function SQLFoundationsCaseStudy() {
           </Button>
 
           {/* =================================================
-              01 — CHALLENGE
+              01 — LEARNING PROBLEM
           ================================================= */}
 
           <CaseSection
             number="01"
-            title="The Challenge"
+            title="The Learning Problem"
           >
-            <Paragraph style={bodyTextStyle}>
-              Beginning SQL learners may recognize commands
-              such as <Text code>SELECT</Text>,{" "}
-              <Text code>WHERE</Text>, and{" "}
-              <Text code>GROUP BY</Text> without being able
-              to construct queries or apply SQL to practical
-              problems.
-            </Paragraph>
-
             <Paragraph
               style={{
                 ...bodyTextStyle,
+                maxWidth: 840,
                 marginBottom: 0,
               }}
             >
-              I designed the system to bridge the gap between
-              recognizing syntax and using SQL independently.
+              Beginners may recognize{" "}
+              <Text code>SELECT</Text>,{" "}
+              <Text code>WHERE</Text>, and{" "}
+              <Text code>GROUP BY</Text> without being able
+              to construct queries or use SQL to solve a
+              problem. I designed the experience to bridge
+              that gap through progressively more independent
+              practice.
             </Paragraph>
 
             <Card
@@ -224,14 +247,19 @@ export default function SQLFoundationsCaseStudy() {
                 strong
                 style={{
                   display: "block",
+
                   color: mediumBlue,
+
                   fontSize: 12,
+
                   textTransform: "uppercase",
+
                   letterSpacing: "0.6px",
+
                   marginBottom: 6,
                 }}
               >
-                Design Goal
+                Learning Progression
               </Text>
 
               <Title
@@ -254,34 +282,31 @@ export default function SQLFoundationsCaseStudy() {
 
           <CaseSection
             number="02"
-            title="Learning System Design"
+            title="Scaffolded Practice"
           >
             <Row
               gutter={[36, 28]}
               align="middle"
             >
-              {/* LEFT — ARCHITECTURE IMAGE */}
-
-              <Col xs={24} md={9}>
+              <Col
+                xs={24}
+                md={9}
+              >
                 <ScreenshotFrame
                   image={learningArchitecture}
-                  alt="SQL learning architecture showing seven skill areas"
+                  alt="SQL learning architecture showing seven SQL skill areas"
                   isMobile={isMobile}
                 />
               </Col>
 
-              {/* RIGHT — EXPLANATION */}
-
-              <Col xs={24} md={15}>
+              <Col
+                xs={24}
+                md={15}
+              >
                 <Paragraph style={bodyTextStyle}>
                   I organized SQL Foundations into seven
-                  focused skill areas, from reading basic
-                  queries through practical SQL.
-                </Paragraph>
-
-                <Paragraph style={bodyTextStyle}>
-                  Each skill area follows the same learning
-                  progression:
+                  focused skill areas and used the same
+                  progression within each one:
                 </Paragraph>
 
                 <ProgressionTags />
@@ -292,13 +317,10 @@ export default function SQLFoundationsCaseStudy() {
                     marginBottom: 0,
                   }}
                 >
-                  The learning system combines{" "}
-                  <strong>chunking</strong>,{" "}
-                  <strong>scaffolding</strong>, retrieval
-                  practice, contextual application, feedback,
-                  and visible mastery. Support decreases as
-                  learners move toward more independent
-                  problem solving.
+                  Support decreases as learners move from
+                  explanation and recognition toward
+                  construction, application, analysis, and
+                  challenge activities.
                 </Paragraph>
               </Col>
             </Row>
@@ -324,29 +346,38 @@ export default function SQLFoundationsCaseStudy() {
                 gutter={[18, 22]}
                 align="top"
               >
-                <Col xs={24} md={8}>
+                <Col
+                  xs={24}
+                  md={8}
+                >
                   <StageCard
                     number="1"
                     title="Learn"
-                    subtitle="Establish the mental model"
+                    subtitle="Build the mental model"
                     image={knowledgeCard}
                   />
                 </Col>
 
-                <Col xs={24} md={8}>
+                <Col
+                  xs={24}
+                  md={8}
+                >
                   <StageCard
                     number="2"
                     title="Build"
-                    subtitle="Practice query structure"
+                    subtitle="Construct query structure"
                     image={buildQuery}
                   />
                 </Col>
 
-                <Col xs={24} md={8}>
+                <Col
+                  xs={24}
+                  md={8}
+                >
                   <StageCard
                     number="3"
                     title="Apply"
-                    subtitle="Solve a contextual problem"
+                    subtitle="Solve a data problem"
                     image={sqlDetective}
                   />
                 </Col>
@@ -362,17 +393,18 @@ export default function SQLFoundationsCaseStudy() {
                 <Paragraph
                   style={{
                     margin: 0,
+
                     color: textColor,
+
+                    fontSize: 16,
+
                     lineHeight: 1.7,
                   }}
                 >
-                  Hints and feedback support retrying, while
+                  Hints support retrying, while only
                   independently solved tasks contribute to
-                  mastery. Visible progress and themed
-                  activities such as{" "}
-                  <strong>SQL Detective</strong> make skill
-                  development visible throughout the
-                  experience.
+                  mastery. XP, progress indicators, and themed
+                  activities make skill development visible.
                 </Paragraph>
               </Card>
             </div>
@@ -386,113 +418,97 @@ export default function SQLFoundationsCaseStudy() {
             number="03"
             title="Learning Analytics"
           >
-            <Paragraph style={bodyTextStyle}>
-              I extended the system beyond completion
-              tracking by capturing independently solved
-              tasks and transforming learner performance into
-              mastery metrics across seven SQL skill areas.
-            </Paragraph>
-
-            <Paragraph style={bodyTextStyle}>
-              The analytics dashboard makes patterns visible
-              across the learning path, helping learners see
-              stronger skills and areas that would benefit
-              from additional practice.
+            <Paragraph
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 850,
+              }}
+            >
+              Instead of tracking completion alone, the
+              system records independently solved tasks and
+              converts performance into mastery metrics
+              across the seven SQL skill areas.
             </Paragraph>
 
             <LargeScreenshotFrame
               image={learningAnalytics}
-              alt="SQL learning analytics dashboard showing mastery by SQL skill"
+              alt="SQL learning analytics dashboard showing mastery across SQL skills"
             />
 
             <FlowCard>
-              <FlowStep>Practice</FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>Performance Data</FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>Skill Mastery</FlowStep>
-            </FlowCard>
-          </CaseSection>
-
-          {/* =================================================
-              04 — ADAPTIVE RECOMMENDATION
-          ================================================= */}
-
-          <CaseSection
-            number="04"
-            title="Adaptive Recommendation"
-          >
-            <Paragraph style={bodyTextStyle}>
-              I used the analytics data to go beyond reporting
-              and support a targeted next step in the learning
-              experience.
-            </Paragraph>
-
-            <Paragraph style={bodyTextStyle}>
-              When the system identifies a skill area that
-              needs additional practice, it recommends a
-              specific focus. Selecting{" "}
-              <strong>Practice Next</strong> sends the learner
-              directly to the relevant SQL skill and activity.
-            </Paragraph>
-
-            <LargeScreenshotFrame
-              image={adaptiveRecommendation}
-              alt="Adaptive recommendation showing targeted SQL practice"
-              maxWidth={880}
-            />
-
-            <FlowCard>
-              <FlowStep>Skill Gap</FlowStep>
-
-              <ArrowRightOutlined />
-
               <FlowStep>
-                Targeted Recommendation
+                Practice
               </FlowStep>
 
               <ArrowRightOutlined />
 
-              <FlowStep>Practice Next</FlowStep>
-            </FlowCard>
+              <FlowStep>
+                Performance Data
+              </FlowStep>
 
-            <Card
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Skill Mastery
+              </FlowStep>
+            </FlowCard>
+          </CaseSection>
+
+          {/* =================================================
+              04 — TARGETED PRACTICE
+          ================================================= */}
+
+          <CaseSection
+            number="04"
+            title="From Analytics to Targeted Practice"
+          >
+            <Paragraph
               style={{
-                border: "none",
-                background: "#F7FAFD",
-                marginTop: 22,
+                ...bodyTextStyle,
+                maxWidth: 850,
               }}
             >
-              <Text
-                strong
-                style={{
-                  display: "block",
-                  color: mediumBlue,
-                  fontSize: 12,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.6px",
-                  marginBottom: 7,
-                }}
-              >
-                Learning Loop
-              </Text>
+              Mastery data does more than describe progress.
+              When the system identifies a weaker skill area,
+              it recommends what to practice next and links
+              the learner directly to the relevant activity.
+            </Paragraph>
 
-              <Title
-                level={4}
-                style={{
-                  margin: 0,
-                  color: blue,
-                  lineHeight: 1.6,
-                }}
-              >
-                Practice → Measure → Identify Need →
-                Recommend → Practice
-              </Title>
-            </Card>
+            <LargeScreenshotFrame
+              image={adaptiveRecommendation}
+              alt="Targeted SQL practice recommendation based on learner mastery"
+              maxWidth={880}
+            />
+
+            <FlowCard>
+              <FlowStep>
+                Practice
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Measure
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Identify Need
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Recommend
+              </FlowStep>
+
+              <ArrowRightOutlined />
+
+              <FlowStep>
+                Practice Again
+              </FlowStep>
+            </FlowCard>
           </CaseSection>
 
           {/* =================================================
@@ -503,12 +519,16 @@ export default function SQLFoundationsCaseStudy() {
             number="05"
             title="Technical Implementation"
           >
-            <Paragraph style={bodyTextStyle}>
-              I developed SQL Foundations as a responsive
-              React application using reusable components for
-              learning activities, feedback, mastery tracking,
-              analytics, and targeted practice
-              recommendations.
+            <Paragraph
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 850,
+              }}
+            >
+              I built the experience as a responsive React
+              application. Reusable components manage
+              learning activities, feedback, mastery logic,
+              analytics, and recommendation behavior.
             </Paragraph>
 
             <Space
@@ -528,60 +548,70 @@ export default function SQLFoundationsCaseStudy() {
                 "Learning Analytics",
                 "Vite",
                 "Vercel",
-              ].map((item) => (
-                <Tag
-                  key={item}
-                  style={{
-                    border: "none",
-                    background: "#EDF4FA",
-                    color: "#164A7B",
-                    padding: "5px 10px",
-                  }}
-                >
-                  {item}
-                </Tag>
-              ))}
+              ].map(
+                (item) => (
+                  <Tag
+                    key={item}
+                    style={{
+                      border: "none",
+
+                      background:
+                        "#EDF4FA",
+
+                      color:
+                        "#164A7B",
+
+                      padding:
+                        "5px 10px",
+                    }}
+                  >
+                    {item}
+                  </Tag>
+                )
+              )}
             </Space>
 
-            <Paragraph
+            <Card
               style={{
-                ...bodyTextStyle,
-                marginBottom: 0,
+                border: "none",
+                background: lightBlue,
               }}
             >
-              Learner progress is persisted locally and
-              transformed into performance metrics that power
-              both the analytics dashboard and the
-              recommendation logic.
-            </Paragraph>
-          </CaseSection>
+              <Text
+                strong
+                style={{
+                  display: "block",
 
-          {/* =================================================
-              06 — TAKEAWAY
-          ================================================= */}
+                  color: mediumBlue,
 
-          <CaseSection
-            number="06"
-            title="Design Takeaway"
-          >
-            <Paragraph style={bodyTextStyle}>
-              SQL Foundations evolved into a{" "}
-              <strong>data-informed learning system</strong>{" "}
-              in which instructional design, performance data,
-              and custom software work together.
-            </Paragraph>
+                  fontSize: 12,
 
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                marginBottom: 0,
-              }}
-            >
-              Practice generates learner data, analytics make
-              skill development visible, and adaptive
-              recommendations use those insights to guide
-              targeted practice.
-            </Paragraph>
+                  textTransform: "uppercase",
+
+                  letterSpacing: "0.6px",
+
+                  marginBottom: 6,
+                }}
+              >
+                System Architecture
+              </Text>
+
+              <Paragraph
+                style={{
+                  margin: 0,
+
+                  color: textColor,
+
+                  fontSize: 16,
+
+                  lineHeight: 1.7,
+                }}
+              >
+                Learner activity → stored progress →
+                mastery metrics → analytics dashboard →
+                targeted recommendation
+              </Paragraph>
+            </Card>
           </CaseSection>
 
           {/* =================================================
@@ -591,15 +621,20 @@ export default function SQLFoundationsCaseStudy() {
           <div
             style={{
               marginTop: 56,
+
               paddingTop: 28,
-              borderTop: "1px solid #e5e7eb",
+
+              borderTop:
+                "1px solid #e5e7eb",
             }}
           >
             <Space wrap>
               <Button
                 type="primary"
                 size="large"
-                icon={<ExportOutlined />}
+                icon={
+                  <ExportOutlined />
+                }
                 onClick={openProject}
               >
                 Experience the Project
@@ -607,8 +642,12 @@ export default function SQLFoundationsCaseStudy() {
 
               <Button
                 size="large"
-                icon={<ArrowLeftOutlined />}
-                onClick={() => navigate("/")}
+                icon={
+                  <ArrowLeftOutlined />
+                }
+                onClick={() =>
+                  navigate("/")
+                }
               >
                 Back to Portfolio
               </Button>
@@ -617,11 +656,18 @@ export default function SQLFoundationsCaseStudy() {
         </main>
       </Content>
 
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
       <Footer
         style={{
           textAlign: "center",
+
           background: "#fafafa",
-          borderTop: "1px solid #f0f0f0",
+
+          borderTop:
+            "1px solid #f0f0f0",
         }}
       >
         <Text type="secondary">
@@ -656,10 +702,17 @@ function MetaItem({
         strong
         style={{
           display: "block",
+
           color: mediumBlue,
+
           fontSize: 12,
-          textTransform: "uppercase",
-          letterSpacing: "0.6px",
+
+          textTransform:
+            "uppercase",
+
+          letterSpacing:
+            "0.6px",
+
           marginBottom: 4,
         }}
       >
@@ -690,16 +743,21 @@ function CaseSection({
   return (
     <section
       style={{
-        marginTop: 60,
+        marginTop: 58,
       }}
     >
       <Text
         strong
         style={{
           display: "block",
+
           color: mediumBlue,
+
           fontSize: 12,
-          letterSpacing: "0.8px",
+
+          letterSpacing:
+            "0.8px",
+
           marginBottom: 4,
         }}
       >
@@ -710,7 +768,9 @@ function CaseSection({
         level={2}
         style={{
           color: blue,
+
           marginTop: 0,
+
           marginBottom: 18,
         }}
       >
@@ -740,45 +800,69 @@ function ProgressionTags() {
     <div
       style={{
         display: "flex",
+
         flexWrap: "wrap",
-        alignItems: "center",
+
+        alignItems:
+          "center",
+
         gap: 8,
-        marginTop: 16,
+
+        marginTop: 14,
+
         marginBottom: 20,
       }}
     >
-      {items.map((item, index) => (
-        <div
-          key={item}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-          }}
-        >
-          <Tag
+      {items.map(
+        (item, index) => (
+          <div
+            key={item}
             style={{
-              border: "none",
-              background: lightBlue,
-              color: blue,
-              padding: "5px 10px",
-              margin: 0,
-              fontWeight: 600,
+              display:
+                "flex",
+
+              alignItems:
+                "center",
+
+              gap: 8,
             }}
           >
-            {item}
-          </Tag>
-
-          {index < items.length - 1 && (
-            <ArrowRightOutlined
+            <Tag
               style={{
-                color: mediumBlue,
-                fontSize: 11,
+                border:
+                  "none",
+
+                background:
+                  lightBlue,
+
+                color: blue,
+
+                padding:
+                  "5px 10px",
+
+                margin: 0,
+
+                fontWeight:
+                  600,
               }}
-            />
-          )}
-        </div>
-      ))}
+            >
+              {item}
+            </Tag>
+
+            {index <
+              items.length - 1 && (
+              <ArrowRightOutlined
+                style={{
+                  color:
+                    mediumBlue,
+
+                  fontSize: 11,
+                }}
+              />
+            )}
+          </div>
+        )
+      )}
     </div>
   );
 }
@@ -796,18 +880,27 @@ function ScreenshotFrame({
     <div
       style={{
         width: "100%",
-        background: "#EEF4F9",
+
+        background:
+          "#EEF4F9",
+
         padding: 10,
+
         borderRadius: 14,
 
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
 
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
 
-        overflow: "hidden",
+        alignItems:
+          "center",
+
+        justifyContent:
+          "center",
+
+        overflow:
+          "hidden",
       }}
     >
       <img
@@ -824,8 +917,11 @@ function ScreenshotFrame({
 
           maxWidth: "100%",
 
-          objectFit: "contain",
-          display: "block",
+          objectFit:
+            "contain",
+
+          display:
+            "block",
 
           borderRadius: 8,
         }}
@@ -848,8 +944,12 @@ function StageCard({
     <Card
       style={{
         border: "none",
-        background: lightBlue,
-        overflow: "hidden",
+
+        background:
+          lightBlue,
+
+        overflow:
+          "hidden",
       }}
       styles={{
         body: {
@@ -859,15 +959,21 @@ function StageCard({
     >
       <div
         style={{
-          padding: "16px 16px 12px",
+          padding:
+            "16px 16px 12px",
         }}
       >
         <Text
           strong
           style={{
-            display: "block",
-            color: mediumBlue,
+            display:
+              "block",
+
+            color:
+              mediumBlue,
+
             fontSize: 11,
+
             marginBottom: 3,
           }}
         >
@@ -891,7 +997,9 @@ function StageCard({
 
       <div
         style={{
-          background: "#ffffff",
+          background:
+            "#ffffff",
+
           padding: 8,
         }}
       >
@@ -900,9 +1008,14 @@ function StageCard({
           alt={`${title} activity`}
           style={{
             width: "100%",
+
             height: 175,
-            objectFit: "contain",
-            display: "block",
+
+            objectFit:
+              "contain",
+
+            display:
+              "block",
           }}
         />
       </div>
@@ -923,16 +1036,24 @@ function LargeScreenshotFrame({
     <div
       style={{
         width: "100%",
+
         maxWidth,
-        margin: "28px auto 0",
+
+        margin:
+          "26px auto 0",
+
         padding: 10,
-        background: "#EEF4F9",
+
+        background:
+          "#EEF4F9",
+
         borderRadius: 14,
 
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
 
-        overflow: "hidden",
+        overflow:
+          "hidden",
       }}
     >
       <img
@@ -940,9 +1061,15 @@ function LargeScreenshotFrame({
         alt={alt}
         style={{
           width: "100%",
+
           height: "auto",
-          display: "block",
-          objectFit: "contain",
+
+          display:
+            "block",
+
+          objectFit:
+            "contain",
+
           borderRadius: 8,
         }}
       />
@@ -961,19 +1088,31 @@ function FlowCard({
     <Card
       style={{
         border: "none",
-        background: lightBlue,
-        marginTop: 24,
+
+        background:
+          lightBlue,
+
+        marginTop: 22,
       }}
     >
       <div
         style={{
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+
+          alignItems:
+            "center",
+
+          justifyContent:
+            "center",
+
           flexWrap: "wrap",
+
           gap: 12,
+
           color: blue,
-          textAlign: "center",
+
+          textAlign:
+            "center",
         }}
       >
         {children}

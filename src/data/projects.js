@@ -14,15 +14,14 @@ export const projects = [
     category: "Data-Informed Technical Learning",
 
     description:
-      "A scaffolded SQL learning system that combines interactive practice, mastery tracking, learning analytics, and targeted recommendations to help beginners progress toward independent problem solving.",
+      "A scaffolded SQL learning system that combines interactive practice, mastery tracking, learning analytics, and adaptive recommendations to help beginners progress from syntax recognition to independent problem solving.",
 
     skills: [
       "React",
       "SQL",
       "Learning Analytics",
-      "Instructional Design",
+      "Adaptive Practice",
       "Gamification",
-      "Adaptive Recommendation",
     ],
 
     image: sqlFoundationsImage,
@@ -44,14 +43,13 @@ export const projects = [
     category: "AI-Powered Learning System",
 
     description:
-      "An AI-powered vocabulary learning system that turns learner mistakes into personalized contextual practice using performance data and Gemini-generated reading.",
+      "A full-stack vocabulary learning application that uses learner performance data and Gemini AI to turn missed words into personalized contextual reading practice.",
 
     skills: [
       "Next.js",
       "TypeScript",
       "Supabase",
       "Gemini AI",
-      "Learning Design",
       "Personalized Learning",
     ],
 
@@ -69,18 +67,18 @@ export const projects = [
   {
     id: "customer-service",
 
-    title: "Customer Service Training Module",
+    title: "Customer Service Training",
 
     category: "Scenario-Based eLearning",
 
     description:
-      "A scenario-based customer service training experience that uses realistic workplace situations, branching decisions, and targeted feedback to build practical service skills.",
+      "A scenario-based Storyline experience that translates workplace behaviors into branching decisions, realistic consequences, coaching feedback, and opportunities to retry.",
 
     skills: [
       "Articulate Storyline",
-      "Scenario-Based Learning",
+      "Action Mapping",
       "Branching",
-      "Instructional Design",
+      "Scenario Design",
       "Feedback Design",
     ],
 
@@ -100,17 +98,16 @@ export const projects = [
 
     title: "Hospital Safety Training",
 
-    category: "Compliance & Safety eLearning",
+    category: "Procedural eLearning & Assessment",
 
     description:
-      "An interactive hospital safety training module designed to reinforce safe workplace practices through visual instruction, interactive activities, and knowledge checks.",
+      "An Adobe Captivate module that teaches PPE donning through structured instruction, visual sequencing, video demonstration, and summative assessment.",
 
     skills: [
       "Adobe Captivate",
-      "Safety Training",
-      "Knowledge Checks",
-      "Instructional Design",
-      "eLearning Development",
+      "Procedural Learning",
+      "Multimedia Learning",
+      "Assessment Design",
     ],
 
     image: hospitalSafetyImage,

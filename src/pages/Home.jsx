@@ -1,6 +1,10 @@
 // src/pages/Home.jsx
 
 import {
+  useEffect,
+} from "react";
+
+import {
   Button,
   Col,
   Grid,
@@ -14,6 +18,7 @@ import {
 } from "@ant-design/icons";
 
 import {
+  useLocation,
   useNavigate,
 } from "react-router-dom";
 
@@ -40,11 +45,48 @@ export default function Home() {
   const navigate =
     useNavigate();
 
+  const location =
+    useLocation();
+
   const screens =
     Grid.useBreakpoint();
 
   const isMobile =
     !screens.md;
+
+  /* =========================================================
+     SCROLL TO HASH SECTION
+  ========================================================= */
+
+  useEffect(() => {
+    if (!location.hash) {
+      return;
+    }
+
+    const sectionId =
+      location.hash.replace(
+        "#",
+        ""
+      );
+
+    const timeout =
+      setTimeout(() => {
+        document
+          .getElementById(
+            sectionId
+          )
+          ?.scrollIntoView({
+            behavior:
+              "smooth",
+
+            block:
+              "start",
+          });
+      }, 0);
+
+    return () =>
+      clearTimeout(timeout);
+  }, [location]);
 
   return (
     <Layout
@@ -56,7 +98,7 @@ export default function Home() {
       <PortfolioHeader />
 
       <Content>
-        {/* ================================================
+        {/* =================================================
             HERO
         ================================================= */}
 
@@ -74,13 +116,15 @@ export default function Home() {
           <Hero />
         </main>
 
-        {/* ================================================
+        {/* =================================================
             FEATURED PROJECTS
         ================================================= */}
 
         <section
           id="projects"
           style={{
+            scrollMarginTop: 90,
+
             background: "#F4F8FC",
 
             padding: isMobile
@@ -102,9 +146,6 @@ export default function Home() {
                 marginBottom: 32,
 
                 color: "#173B63",
-
-                borderBottom: "none",
-                paddingBottom: 0,
               }}
             >
               Featured Projects
@@ -117,11 +158,14 @@ export default function Home() {
               {projects.map(
                 (project) => (
                   <Col
-                    key={project.id}
+                    key={
+                      project.id
+                    }
                     xs={24}
                     lg={12}
                     style={{
-                      display: "flex",
+                      display:
+                        "flex",
                     }}
                   >
                     <ProjectCard
@@ -136,7 +180,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================================================
+        {/* =================================================
             ABOUT
         ================================================= */}
 
@@ -156,18 +200,20 @@ export default function Home() {
             style={{
               maxWidth: 820,
 
+              scrollMarginTop: 90,
+
               padding: isMobile
                 ? "56px 0"
-                : "76px 0",
+                : "72px 0",
             }}
           >
             <Title
               level={2}
               style={{
                 marginTop: 0,
-                marginBottom: 16,
+                marginBottom: 14,
+
                 color: "#173B63",
-                borderBottom: "none",
               }}
             >
               About
@@ -179,29 +225,28 @@ export default function Home() {
                   ? 16
                   : 17,
 
-                lineHeight: 1.8,
+                lineHeight: 1.75,
 
                 color: "#4b5563",
 
-                marginBottom: 24,
+                marginBottom: 22,
               }}
             >
-              I am an instructional designer
-              and learning technologist with a
-              background in curriculum
-              development, education, and
-              software development. I combine
-              learning design with modern
-              technology to create practical,
-              interactive experiences that help
-              learners build skills through
-              meaningful practice.
+              I design learning experiences at the
+              intersection of instructional design,
+              learning technology, and software
+              development. My work combines learning
+              strategy with custom development, AI,
+              learner data, and industry-standard
+              eLearning tools.
             </Paragraph>
 
             <Button
               type="primary"
               onClick={() =>
-                navigate("/about")
+                navigate(
+                  "/about"
+                )
               }
             >
               More About Me
@@ -209,13 +254,15 @@ export default function Home() {
             </Button>
           </section>
 
-          {/* ================================================
+          {/* =================================================
               CONTACT
           ================================================= */}
 
           <section
             id="contact"
             style={{
+              scrollMarginTop: 90,
+
               paddingBottom: 80,
             }}
           >
@@ -223,25 +270,36 @@ export default function Home() {
               level={2}
               style={{
                 color: "#173B63",
-                borderBottom: "none",
+
+                marginBottom: 10,
               }}
             >
               Contact
             </Title>
 
-            <Paragraph type="secondary">
-              Connect with me through
-              LinkedIn or GitHub, or
-              contact me by email.
+            <Paragraph
+              type="secondary"
+              style={{
+                marginBottom: 0,
+              }}
+            >
+              Connect with me through LinkedIn,
+              GitHub, or email.
             </Paragraph>
           </section>
         </main>
       </Content>
 
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
       <Footer
         style={{
           textAlign: "center",
+
           background: "#fafafa",
+
           borderTop:
             "1px solid #f0f0f0",
         }}
