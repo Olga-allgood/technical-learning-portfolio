@@ -20,6 +20,10 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import {
+  track,
+} from "@vercel/analytics";
+
 const {
   Title,
   Text,
@@ -37,11 +41,61 @@ export default function ProjectCard({
   const isMobile =
     !screens.md;
 
+  /* =========================================================
+     LIVE PROJECT
+  ========================================================= */
+
   const handleViewProject = () => {
+    track(
+      "View Live Project",
+      {
+        project:
+          project.title,
+      }
+    );
+
     window.open(
       project.liveUrl,
       "_blank",
       "noopener,noreferrer"
+    );
+  };
+
+  /* =========================================================
+     DEMO
+  ========================================================= */
+
+  const handleViewDemo = () => {
+    track(
+      "View Demo",
+      {
+        project:
+          project.title,
+      }
+    );
+
+    window.open(
+      project.demoUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  /* =========================================================
+     CASE STUDY
+  ========================================================= */
+
+  const handleViewCaseStudy = () => {
+    track(
+      "View Project Case Study",
+      {
+        project:
+          project.title,
+      }
+    );
+
+    navigate(
+      project.caseStudyPath
     );
   };
 
@@ -65,13 +119,19 @@ export default function ProjectCard({
       styles={{
         body: {
           padding: 0,
+
           height: "100%",
+
           display: "flex",
-          flexDirection: "column",
+
+          flexDirection:
+            "column",
         },
       }}
     >
-      {/* TITLE */}
+      {/* =====================================================
+          TITLE
+      ===================================================== */}
 
       <div
         style={{
@@ -82,13 +142,15 @@ export default function ProjectCard({
       >
         <Text
           style={{
-            display: "block",
+            display:
+              "block",
 
             fontSize: 13,
 
             fontWeight: 600,
 
-            color: "#4E79A7",
+            color:
+              "#4E79A7",
 
             textTransform:
               "uppercase",
@@ -111,49 +173,61 @@ export default function ProjectCard({
               ? 24
               : 28,
 
-            color: "#173B63",
+            color:
+              "#173B63",
           }}
         >
           {project.title}
         </Title>
       </div>
 
-      {/* IMAGE */}
+      {/* =====================================================
+          IMAGE
+      ===================================================== */}
 
       <div
         style={{
           width: "100%",
 
-          aspectRatio: "16 / 9",
+          aspectRatio:
+            "16 / 9",
 
           background:
             "#EDF4FA",
 
-          overflow: "hidden",
+          overflow:
+            "hidden",
 
           display: "flex",
 
-          alignItems: "center",
+          alignItems:
+            "center",
 
           justifyContent:
             "center",
         }}
       >
         <img
-          src={project.image}
+          src={
+            project.image
+          }
           alt={`${project.title} preview`}
           style={{
             width: "100%",
             height: "100%",
 
-            objectFit: "contain",
+            objectFit:
+              "contain",
 
-            display: "block",
+            display:
+              "block",
           }}
         />
       </div>
 
-      {/* DESCRIPTION */}
+      {/* =====================================================
+          DESCRIPTION
+      ===================================================== */}
 
       <div
         style={{
@@ -175,7 +249,8 @@ export default function ProjectCard({
 
             lineHeight: 1.7,
 
-            color: "#4b5563",
+            color:
+              "#4b5563",
 
             marginBottom: 20,
           }}
@@ -183,7 +258,9 @@ export default function ProjectCard({
           {project.description}
         </Paragraph>
 
-        {/* SKILLS */}
+        {/* =================================================
+            SKILLS
+        ================================================= */}
 
         <Space
           wrap
@@ -203,7 +280,8 @@ export default function ProjectCard({
                   borderRadius:
                     999,
 
-                  border: "none",
+                  border:
+                    "none",
 
                   background:
                     "#EDF4FA",
@@ -218,13 +296,16 @@ export default function ProjectCard({
           )}
         </Space>
 
-        {/* ACTIONS */}
+        {/* =================================================
+            ACTIONS
+        ================================================= */}
 
         <Space
           wrap
           size="middle"
           style={{
-            marginTop: "auto",
+            marginTop:
+              "auto",
           }}
         >
           <Button
@@ -244,12 +325,8 @@ export default function ProjectCard({
               icon={
                 <PlayCircleOutlined />
               }
-              onClick={() =>
-                window.open(
-                  project.demoUrl,
-                  "_blank",
-                  "noopener,noreferrer"
-                )
+              onClick={
+                handleViewDemo
               }
             >
               1-Min Demo
@@ -262,10 +339,8 @@ export default function ProjectCard({
               icon={
                 <ReadOutlined />
               }
-              onClick={() =>
-                navigate(
-                  project.caseStudyPath
-                )
+              onClick={
+                handleViewCaseStudy
               }
             >
               Design Process

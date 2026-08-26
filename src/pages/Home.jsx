@@ -25,6 +25,10 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import {
+  track,
+} from "@vercel/analytics";
+
 import PortfolioHeader from "../components/PortfolioHeader";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
@@ -90,6 +94,28 @@ export default function Home() {
     return () =>
       clearTimeout(timeout);
   }, [location]);
+
+  /* =========================================================
+     CONTACT ANALYTICS
+  ========================================================= */
+
+  const handleEmailClick = () => {
+    track(
+      "Contact Click",
+      {
+        method: "Email",
+      }
+    );
+  };
+
+  const handleLinkedInClick = () => {
+    track(
+      "Contact Click",
+      {
+        method: "LinkedIn",
+      }
+    );
+  };
 
   return (
     <Layout
@@ -317,6 +343,9 @@ export default function Home() {
                   <MailOutlined />
                 }
                 href="mailto:olga.s.orlova@gmail.com"
+                onClick={
+                  handleEmailClick
+                }
               >
                 Email Me
               </Button>
@@ -328,6 +357,9 @@ export default function Home() {
                 href="https://www.linkedin.com/in/orlovaolga/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={
+                  handleLinkedInClick
+                }
               >
                 LinkedIn
               </Button>

@@ -21,6 +21,8 @@ import {
 
 import { Link } from "react-router-dom";
 
+import { track } from "@vercel/analytics";
+
 import foundationsImage from "../../assets/hospital-safety-case-study/02-ppe-foundations.png";
 
 import respiratorStep1 from "../../assets/hospital-safety-case-study/03-respirator-step-1.png";
@@ -113,6 +115,22 @@ const bodyTextStyle = {
 ========================================================= */
 
 export default function HospitalSafetyCaseStudy() {
+  /* =========================================================
+     PROJECT ANALYTICS
+  ========================================================= */
+
+  const openProject = () => {
+    track("Experience Project", {
+      project: "Hospital Safety Training",
+    });
+
+    window.open(
+      projectUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <main style={pageStyle}>
       {/* =====================================================
@@ -143,18 +161,12 @@ export default function HospitalSafetyCaseStudy() {
           strong
           style={{
             display: "block",
-
-            color:
-              mediumBlue,
-
+            color: mediumBlue,
             fontSize: 13,
-
             textTransform:
               "uppercase",
-
             letterSpacing:
               "0.8px",
-
             marginBottom: 7,
           }}
         >
@@ -165,13 +177,10 @@ export default function HospitalSafetyCaseStudy() {
           level={1}
           style={{
             color: blue,
-
             marginTop: 0,
             marginBottom: 14,
-
             fontSize:
               "clamp(36px, 6vw, 52px)",
-
             lineHeight: 1.08,
           }}
         >
@@ -181,14 +190,9 @@ export default function HospitalSafetyCaseStudy() {
         <Paragraph
           style={{
             maxWidth: 820,
-
             fontSize: 20,
-
             lineHeight: 1.65,
-
-            color:
-              textColor,
-
+            color: textColor,
             marginBottom: 24,
           }}
         >
@@ -201,12 +205,9 @@ export default function HospitalSafetyCaseStudy() {
         <Card
           style={{
             maxWidth: 940,
-
             border: "none",
-
             background:
               lightBlue,
-
             marginBottom: 24,
           }}
         >
@@ -246,9 +247,9 @@ export default function HospitalSafetyCaseStudy() {
         <Button
           type="primary"
           size="large"
-          href={projectUrl}
-          target="_blank"
-          rel="noreferrer"
+          onClick={
+            openProject
+          }
           icon={
             <PlayCircleOutlined />
           }
@@ -339,7 +340,6 @@ export default function HospitalSafetyCaseStudy() {
         <Paragraph
           style={{
             ...bodyTextStyle,
-
             maxWidth: 840,
           }}
         >
@@ -378,10 +378,8 @@ export default function HospitalSafetyCaseStudy() {
                   style={{
                     width:
                       "100%",
-
                     borderRadius:
                       10,
-
                     display:
                       "block",
                   }}
@@ -398,7 +396,6 @@ export default function HospitalSafetyCaseStudy() {
                     style={{
                       fontSize:
                         12,
-
                       letterSpacing:
                         1,
                     }}
@@ -531,7 +528,6 @@ export default function HospitalSafetyCaseStudy() {
             <Paragraph
               style={{
                 ...bodyTextStyle,
-
                 marginBottom:
                   0,
               }}
@@ -547,10 +543,8 @@ export default function HospitalSafetyCaseStudy() {
               style={{
                 border:
                   "none",
-
                 background:
                   lightBlue,
-
                 marginTop: 22,
               }}
             >
@@ -561,7 +555,6 @@ export default function HospitalSafetyCaseStudy() {
                   style={{
                     color:
                       mediumBlue,
-
                     marginTop: 4,
                   }}
                 />
@@ -593,7 +586,6 @@ export default function HospitalSafetyCaseStudy() {
         <Paragraph
           style={{
             ...bodyTextStyle,
-
             maxWidth: 850,
           }}
         >
@@ -624,13 +616,10 @@ export default function HospitalSafetyCaseStudy() {
                 style={{
                   border:
                     "none",
-
                   background:
                     "#EDF4FA",
-
                   color:
                     "#164A7B",
-
                   padding:
                     "5px 10px",
                 }}
@@ -649,9 +638,7 @@ export default function HospitalSafetyCaseStudy() {
       <section
         style={{
           marginTop: 58,
-
           paddingTop: 28,
-
           borderTop:
             "1px solid #e5e7eb",
         }}
@@ -660,9 +647,9 @@ export default function HospitalSafetyCaseStudy() {
           <Button
             type="primary"
             size="large"
-            href={projectUrl}
-            target="_blank"
-            rel="noreferrer"
+            onClick={
+              openProject
+            }
             icon={
               <PlayCircleOutlined />
             }
@@ -701,18 +688,13 @@ function MetaItem({
         style={{
           display:
             "block",
-
           color:
             mediumBlue,
-
           fontSize: 12,
-
           textTransform:
             "uppercase",
-
           letterSpacing:
             "0.6px",
-
           marginBottom: 4,
         }}
       >
@@ -751,15 +733,11 @@ function CaseSection({
         style={{
           display:
             "block",
-
           color:
             mediumBlue,
-
           fontSize: 12,
-
           letterSpacing:
             "0.8px",
-
           marginBottom: 4,
         }}
       >
@@ -770,9 +748,7 @@ function CaseSection({
         level={2}
         style={{
           color: blue,
-
           marginTop: 0,
-
           marginBottom: 18,
         }}
       >
@@ -796,10 +772,8 @@ function FlowCard({
       style={{
         border:
           "none",
-
         background:
           lightBlue,
-
         marginTop: 18,
       }}
       styles={{
@@ -811,15 +785,11 @@ function FlowCard({
       <div
         style={{
           display: "flex",
-
           alignItems:
             "center",
-
           flexWrap:
             "wrap",
-
           gap: 10,
-
           color: blue,
         }}
       >
@@ -841,7 +811,6 @@ function FlowStep({
       strong
       style={{
         color: blue,
-
         fontSize: 14,
       }}
     >

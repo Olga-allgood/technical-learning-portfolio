@@ -19,6 +19,7 @@ import {
 } from "@ant-design/icons";
 
 import { useNavigate } from "react-router-dom";
+import { track } from "@vercel/analytics";
 
 import PortfolioHeader from "../../components/PortfolioHeader";
 
@@ -60,7 +61,15 @@ export default function CustomerServiceCaseStudy() {
   const isMobile =
     !screens.md;
 
+  /* =========================================================
+     PROJECT ANALYTICS
+  ========================================================= */
+
   const openProject = () => {
+    track("Experience Project", {
+      project: "Customer Service Training",
+    });
+
     window.open(
       "https://storage.googleapis.com/olgaorlovainstructionaldesign/UPDATED%20Coffee%20shop%20-%20Storyline%20output/story.html",
       "_blank",

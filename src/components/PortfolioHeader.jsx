@@ -20,6 +20,10 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import {
+  track,
+} from "@vercel/analytics";
+
 const { Text } = Typography;
 
 const blue = "#173B63";
@@ -73,7 +77,18 @@ export default function PortfolioHeader() {
     navigate("/about");
   };
 
+  /* =========================================================
+     RESUME
+  ========================================================= */
+
   const openResume = () => {
+    track(
+      "View Resume",
+      {
+        location: "Header",
+      }
+    );
+
     setDrawerOpen(false);
 
     window.open(

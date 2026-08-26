@@ -19,6 +19,7 @@ import {
 } from "@ant-design/icons";
 
 import { useNavigate } from "react-router-dom";
+import { track } from "@vercel/analytics";
 
 import PortfolioHeader from "../../components/PortfolioHeader";
 
@@ -54,6 +55,10 @@ export default function SQLFoundationsCaseStudy() {
   const isMobile = !screens.md;
 
   const openProject = () => {
+    track("Experience Project", {
+      project: "SQL Foundations Lab",
+    });
+
     window.open(
       "https://sql-foundations-lab.vercel.app/",
       "_blank",
@@ -76,15 +81,12 @@ export default function SQLFoundationsCaseStudy() {
             width: "100%",
             maxWidth: 1100,
             margin: "0 auto",
-
             padding: isMobile
               ? "32px 18px 64px"
               : "48px 40px 88px",
           }}
         >
-          {/* =================================================
-              BACK
-          ================================================= */}
+          {/* BACK */}
 
           <Button
             type="link"
@@ -98,9 +100,7 @@ export default function SQLFoundationsCaseStudy() {
             Back to Portfolio
           </Button>
 
-          {/* =================================================
-              HERO
-          ================================================= */}
+          {/* HERO */}
 
           <Text
             strong
@@ -120,13 +120,8 @@ export default function SQLFoundationsCaseStudy() {
             level={1}
             style={{
               color: blue,
-
-              fontSize: isMobile
-                ? 34
-                : 48,
-
+              fontSize: isMobile ? 34 : 48,
               lineHeight: 1.08,
-
               marginTop: 0,
               marginBottom: 12,
             }}
@@ -137,15 +132,9 @@ export default function SQLFoundationsCaseStudy() {
           <Paragraph
             style={{
               maxWidth: 880,
-
-              fontSize: isMobile
-                ? 17
-                : 20,
-
+              fontSize: isMobile ? 17 : 20,
               lineHeight: 1.65,
-
               color: textColor,
-
               marginBottom: 24,
             }}
           >
@@ -161,39 +150,27 @@ export default function SQLFoundationsCaseStudy() {
           <Card
             style={{
               maxWidth: 960,
-
               border: "none",
-
               background: lightBlue,
-
               marginBottom: 24,
             }}
           >
             <Row gutter={[24, 18]}>
-              <Col
-                xs={24}
-                md={8}
-              >
+              <Col xs={24} md={8}>
                 <MetaItem
                   label="Audience"
                   value="Beginning SQL learners"
                 />
               </Col>
 
-              <Col
-                xs={24}
-                md={8}
-              >
+              <Col xs={24} md={8}>
                 <MetaItem
                   label="Technology"
                   value="React · JavaScript · SQL · Ant Design"
                 />
               </Col>
 
-              <Col
-                xs={24}
-                md={8}
-              >
+              <Col xs={24} md={8}>
                 <MetaItem
                   label="Learning System"
                   value="Scaffolding · Mastery Analytics · Gamification · Targeted Practice"
@@ -211,9 +188,7 @@ export default function SQLFoundationsCaseStudy() {
             Experience the Project
           </Button>
 
-          {/* =================================================
-              01 — LEARNING PROBLEM
-          ================================================= */}
+          {/* 01 — LEARNING PROBLEM */}
 
           <CaseSection
             number="01"
@@ -247,15 +222,10 @@ export default function SQLFoundationsCaseStudy() {
                 strong
                 style={{
                   display: "block",
-
                   color: mediumBlue,
-
                   fontSize: 12,
-
                   textTransform: "uppercase",
-
                   letterSpacing: "0.6px",
-
                   marginBottom: 6,
                 }}
               >
@@ -276,9 +246,7 @@ export default function SQLFoundationsCaseStudy() {
             </Card>
           </CaseSection>
 
-          {/* =================================================
-              02 — LEARNING SYSTEM
-          ================================================= */}
+          {/* 02 — LEARNING SYSTEM */}
 
           <CaseSection
             number="02"
@@ -288,10 +256,7 @@ export default function SQLFoundationsCaseStudy() {
               gutter={[36, 28]}
               align="middle"
             >
-              <Col
-                xs={24}
-                md={9}
-              >
+              <Col xs={24} md={9}>
                 <ScreenshotFrame
                   image={learningArchitecture}
                   alt="SQL learning architecture showing seven SQL skill areas"
@@ -299,10 +264,7 @@ export default function SQLFoundationsCaseStudy() {
                 />
               </Col>
 
-              <Col
-                xs={24}
-                md={15}
-              >
+              <Col xs={24} md={15}>
                 <Paragraph style={bodyTextStyle}>
                   I organized SQL Foundations into seven
                   focused skill areas and used the same
@@ -346,10 +308,7 @@ export default function SQLFoundationsCaseStudy() {
                 gutter={[18, 22]}
                 align="top"
               >
-                <Col
-                  xs={24}
-                  md={8}
-                >
+                <Col xs={24} md={8}>
                   <StageCard
                     number="1"
                     title="Learn"
@@ -358,10 +317,7 @@ export default function SQLFoundationsCaseStudy() {
                   />
                 </Col>
 
-                <Col
-                  xs={24}
-                  md={8}
-                >
+                <Col xs={24} md={8}>
                   <StageCard
                     number="2"
                     title="Build"
@@ -370,10 +326,7 @@ export default function SQLFoundationsCaseStudy() {
                   />
                 </Col>
 
-                <Col
-                  xs={24}
-                  md={8}
-                >
+                <Col xs={24} md={8}>
                   <StageCard
                     number="3"
                     title="Apply"
@@ -393,11 +346,8 @@ export default function SQLFoundationsCaseStudy() {
                 <Paragraph
                   style={{
                     margin: 0,
-
                     color: textColor,
-
                     fontSize: 16,
-
                     lineHeight: 1.7,
                   }}
                 >
@@ -410,9 +360,7 @@ export default function SQLFoundationsCaseStudy() {
             </div>
           </CaseSection>
 
-          {/* =================================================
-              03 — LEARNING ANALYTICS
-          ================================================= */}
+          {/* 03 — LEARNING ANALYTICS */}
 
           <CaseSection
             number="03"
@@ -454,9 +402,7 @@ export default function SQLFoundationsCaseStudy() {
             </FlowCard>
           </CaseSection>
 
-          {/* =================================================
-              04 — TARGETED PRACTICE
-          ================================================= */}
+          {/* 04 — TARGETED PRACTICE */}
 
           <CaseSection
             number="04"
@@ -511,9 +457,7 @@ export default function SQLFoundationsCaseStudy() {
             </FlowCard>
           </CaseSection>
 
-          {/* =================================================
-              05 — TECHNICAL IMPLEMENTATION
-          ================================================= */}
+          {/* 05 — TECHNICAL IMPLEMENTATION */}
 
           <CaseSection
             number="05"
@@ -554,13 +498,10 @@ export default function SQLFoundationsCaseStudy() {
                     key={item}
                     style={{
                       border: "none",
-
                       background:
                         "#EDF4FA",
-
                       color:
                         "#164A7B",
-
                       padding:
                         "5px 10px",
                     }}
@@ -581,15 +522,10 @@ export default function SQLFoundationsCaseStudy() {
                 strong
                 style={{
                   display: "block",
-
                   color: mediumBlue,
-
                   fontSize: 12,
-
                   textTransform: "uppercase",
-
                   letterSpacing: "0.6px",
-
                   marginBottom: 6,
                 }}
               >
@@ -599,11 +535,8 @@ export default function SQLFoundationsCaseStudy() {
               <Paragraph
                 style={{
                   margin: 0,
-
                   color: textColor,
-
                   fontSize: 16,
-
                   lineHeight: 1.7,
                 }}
               >
@@ -614,16 +547,12 @@ export default function SQLFoundationsCaseStudy() {
             </Card>
           </CaseSection>
 
-          {/* =================================================
-              CTA
-          ================================================= */}
+          {/* CTA */}
 
           <div
             style={{
               marginTop: 56,
-
               paddingTop: 28,
-
               borderTop:
                 "1px solid #e5e7eb",
             }}
@@ -632,9 +561,7 @@ export default function SQLFoundationsCaseStudy() {
               <Button
                 type="primary"
                 size="large"
-                icon={
-                  <ExportOutlined />
-                }
+                icon={<ExportOutlined />}
                 onClick={openProject}
               >
                 Experience the Project
@@ -642,9 +569,7 @@ export default function SQLFoundationsCaseStudy() {
 
               <Button
                 size="large"
-                icon={
-                  <ArrowLeftOutlined />
-                }
+                icon={<ArrowLeftOutlined />}
                 onClick={() =>
                   navigate("/")
                 }
@@ -656,16 +581,12 @@ export default function SQLFoundationsCaseStudy() {
         </main>
       </Content>
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
+      {/* FOOTER */}
 
       <Footer
         style={{
           textAlign: "center",
-
           background: "#fafafa",
-
           borderTop:
             "1px solid #f0f0f0",
         }}
@@ -702,17 +623,12 @@ function MetaItem({
         strong
         style={{
           display: "block",
-
           color: mediumBlue,
-
           fontSize: 12,
-
           textTransform:
             "uppercase",
-
           letterSpacing:
             "0.6px",
-
           marginBottom: 4,
         }}
       >
@@ -750,14 +666,10 @@ function CaseSection({
         strong
         style={{
           display: "block",
-
           color: mediumBlue,
-
           fontSize: 12,
-
           letterSpacing:
             "0.8px",
-
           marginBottom: 4,
         }}
       >
@@ -768,9 +680,7 @@ function CaseSection({
         level={2}
         style={{
           color: blue,
-
           marginTop: 0,
-
           marginBottom: 18,
         }}
       >
@@ -800,16 +710,10 @@ function ProgressionTags() {
     <div
       style={{
         display: "flex",
-
         flexWrap: "wrap",
-
-        alignItems:
-          "center",
-
+        alignItems: "center",
         gap: 8,
-
         marginTop: 14,
-
         marginBottom: 20,
       }}
     >
@@ -820,10 +724,8 @@ function ProgressionTags() {
             style={{
               display:
                 "flex",
-
               alignItems:
                 "center",
-
               gap: 8,
             }}
           >
@@ -831,17 +733,12 @@ function ProgressionTags() {
               style={{
                 border:
                   "none",
-
                 background:
                   lightBlue,
-
                 color: blue,
-
                 padding:
                   "5px 10px",
-
                 margin: 0,
-
                 fontWeight:
                   600,
               }}
@@ -855,7 +752,6 @@ function ProgressionTags() {
                 style={{
                   color:
                     mediumBlue,
-
                   fontSize: 11,
                 }}
               />
@@ -880,25 +776,17 @@ function ScreenshotFrame({
     <div
       style={{
         width: "100%",
-
         background:
           "#EEF4F9",
-
         padding: 10,
-
         borderRadius: 14,
-
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
-
         display: "flex",
-
         alignItems:
           "center",
-
         justifyContent:
           "center",
-
         overflow:
           "hidden",
       }}
@@ -910,19 +798,14 @@ function ScreenshotFrame({
           height: isMobile
             ? "auto"
             : STANDARD_IMAGE_HEIGHT,
-
           width: isMobile
             ? "100%"
             : "auto",
-
           maxWidth: "100%",
-
           objectFit:
             "contain",
-
           display:
             "block",
-
           borderRadius: 8,
         }}
       />
@@ -944,10 +827,8 @@ function StageCard({
     <Card
       style={{
         border: "none",
-
         background:
           lightBlue,
-
         overflow:
           "hidden",
       }}
@@ -968,12 +849,9 @@ function StageCard({
           style={{
             display:
               "block",
-
             color:
               mediumBlue,
-
             fontSize: 11,
-
             marginBottom: 3,
           }}
         >
@@ -999,7 +877,6 @@ function StageCard({
         style={{
           background:
             "#ffffff",
-
           padding: 8,
         }}
       >
@@ -1008,12 +885,9 @@ function StageCard({
           alt={`${title} activity`}
           style={{
             width: "100%",
-
             height: 175,
-
             objectFit:
               "contain",
-
             display:
               "block",
           }}
@@ -1036,22 +910,15 @@ function LargeScreenshotFrame({
     <div
       style={{
         width: "100%",
-
         maxWidth,
-
         margin:
           "26px auto 0",
-
         padding: 10,
-
         background:
           "#EEF4F9",
-
         borderRadius: 14,
-
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
-
         overflow:
           "hidden",
       }}
@@ -1061,15 +928,11 @@ function LargeScreenshotFrame({
         alt={alt}
         style={{
           width: "100%",
-
           height: "auto",
-
           display:
             "block",
-
           objectFit:
             "contain",
-
           borderRadius: 8,
         }}
       />
@@ -1088,29 +951,21 @@ function FlowCard({
     <Card
       style={{
         border: "none",
-
         background:
           lightBlue,
-
         marginTop: 22,
       }}
     >
       <div
         style={{
           display: "flex",
-
           alignItems:
             "center",
-
           justifyContent:
             "center",
-
           flexWrap: "wrap",
-
           gap: 12,
-
           color: blue,
-
           textAlign:
             "center",
         }}

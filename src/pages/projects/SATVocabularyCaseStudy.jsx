@@ -19,6 +19,7 @@ import {
 } from "@ant-design/icons";
 
 import { useNavigate } from "react-router-dom";
+import { track } from "@vercel/analytics";
 
 import PortfolioHeader from "../../components/PortfolioHeader";
 
@@ -59,7 +60,15 @@ export default function SATVocabularyCaseStudy() {
   const isMobile =
     !screens.md;
 
+  /* =========================================================
+     PROJECT ANALYTICS
+  ========================================================= */
+
   const openProject = () => {
+    track("Experience Project", {
+      project: "SAT Vocabulary Builder",
+    });
+
     window.open(
       "https://new-sat-builder-hw4o.vercel.app/",
       "_blank",

@@ -24,6 +24,10 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import {
+  track,
+} from "@vercel/analytics";
+
 import PortfolioHeader from "../components/PortfolioHeader";
 
 const {
@@ -52,7 +56,18 @@ export default function About() {
   const isMobile =
     !screens.md;
 
+  /* =========================================================
+     RESUME
+  ========================================================= */
+
   const openResume = () => {
+    track(
+      "View Resume",
+      {
+        location: "About Page",
+      }
+    );
+
     window.open(
       "/Olga-Orlova-Resume.pdf",
       "_blank",
