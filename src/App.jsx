@@ -12,6 +12,7 @@ import SQLFoundationsCaseStudy from "./pages/projects/SQLFoundationsCaseStudy";
 import SATVocabularyCaseStudy from "./pages/projects/SATVocabularyCaseStudy";
 import CustomerServiceCaseStudy from "./pages/projects/CustomerServiceCaseStudy";
 import HospitalSafetyCaseStudy from "./pages/projects/HospitalSafetyCaseStudy";
+import APIFundamentalsCaseStudy from "./pages/projects/APIFundamentalsCaseStudy";
 
 function App() {
   return (
@@ -44,6 +45,11 @@ function App() {
       <Route
         path="/projects/hospital-safety"
         element={<HospitalSafetyCaseStudy />}
+      />
+
+      <Route
+        path="/projects/api-fundamentals"
+        element={<APIFundamentalsCaseStudy />}
       />
     </Routes>
   );

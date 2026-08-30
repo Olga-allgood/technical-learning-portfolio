@@ -4,6 +4,7 @@ import sqlFoundationsImage from "../assets/projects/sql-foundations.png";
 import satVocabularyImage from "../assets/projects/sat-vocabulary.png";
 import customerServiceImage from "../assets/projects/customer-service.png";
 import hospitalSafetyImage from "../assets/projects/hospital-safety.png";
+import apiFundamentalsImage from "../assets/api-fundamentals/weather-api-lab.png";
 
 export const projects = [
   {
@@ -62,6 +63,35 @@ export const projects = [
 
     caseStudyPath:
       "/projects/sat-vocabulary",
+  },
+
+  {
+    id: "api-fundamentals",
+
+    title: "API Fundamentals",
+
+    category: "Interactive Technical eLearning",
+
+    description:
+      "A Rise 360 technical learning experience that teaches API requests, HTTP methods, responses, and troubleshooting through progressive practice, interactive simulation, and scenario-based diagnosis.",
+
+    skills: [
+      "Rise 360",
+      "JavaScript",
+      "API Fundamentals",
+      "Scenario-Based Learning",
+      "Troubleshooting",
+    ],
+
+    image: apiFundamentalsImage,
+
+    liveUrl:
+      "/api-fundamentals/index.html",
+
+    demoUrl: "",
+
+    caseStudyPath:
+      "/projects/api-fundamentals",
   },
 
   {
