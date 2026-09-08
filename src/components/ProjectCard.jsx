@@ -30,6 +30,24 @@ const {
   Paragraph,
 } = Typography;
 
+/* =========================================================
+   TECHNOLOGY TAGS
+========================================================= */
+
+const technologyNames = [
+  "Articulate Storyline",
+  "Rise 360",
+  "Adobe Captivate",
+  "React",
+  "JavaScript",
+  "TypeScript",
+  "Next.js",
+  "Supabase",
+  "Gemini AI",
+  "SQL",
+  "Python",
+];
+
 export default function ProjectCard({
   project,
 }) {
@@ -40,6 +58,26 @@ export default function ProjectCard({
 
   const isMobile =
     !screens.md;
+
+  /* =========================================================
+     SPLIT TECHNOLOGIES FROM LEARNING / DESIGN SKILLS
+  ========================================================= */
+
+  const technologySkills =
+    project.skills.filter(
+      (skill) =>
+        technologyNames.includes(
+          skill
+        )
+    );
+
+  const learningSkills =
+    project.skills.filter(
+      (skill) =>
+        !technologyNames.includes(
+          skill
+        )
+    );
 
   /* =========================================================
      LIVE PROJECT
@@ -104,33 +142,25 @@ export default function ProjectCard({
       style={{
         width: "100%",
         height: "100%",
-
         border: "none",
-
         borderRadius: 18,
-
         overflow: "hidden",
-
         background: "#ffffff",
-
         boxShadow:
           "0 8px 28px rgba(30, 70, 110, 0.10)",
       }}
       styles={{
         body: {
           padding: 0,
-
           height: "100%",
-
           display: "flex",
-
           flexDirection:
             "column",
         },
       }}
     >
       {/* =====================================================
-          TITLE
+          TITLE + TECHNOLOGY TAGS
       ===================================================== */}
 
       <div
@@ -144,20 +174,14 @@ export default function ProjectCard({
           style={{
             display:
               "block",
-
             fontSize: 13,
-
             fontWeight: 600,
-
             color:
               "#4E79A7",
-
             textTransform:
               "uppercase",
-
             letterSpacing:
               "0.6px",
-
             marginBottom: 7,
           }}
         >
@@ -168,17 +192,54 @@ export default function ProjectCard({
           level={2}
           style={{
             margin: 0,
-
             fontSize: isMobile
               ? 24
               : 28,
-
             color:
               "#173B63",
+            lineHeight: 1.25,
           }}
         >
           {project.title}
         </Title>
+
+        {/* TECHNOLOGY TAGS */}
+
+        {technologySkills.length >
+          0 && (
+          <Space
+            wrap
+            size={[6, 6]}
+            style={{
+              marginTop: 10,
+            }}
+          >
+            {technologySkills.map(
+              (skill) => (
+                <Tag
+                  key={skill}
+                  style={{
+                    margin: 0,
+                    padding:
+                      "2px 8px",
+                    borderRadius:
+                      999,
+                    border:
+                      "none",
+                    background:
+                      "#EDF4FA",
+                    color:
+                      "#164A7B",
+                    fontSize: 12,
+                    fontWeight: 600,
+                  }}
+                >
+                  {skill}
+                </Tag>
+              )
+            )}
+          </Space>
+        )}
       </div>
 
       {/* =====================================================
@@ -188,21 +249,15 @@ export default function ProjectCard({
       <div
         style={{
           width: "100%",
-
           aspectRatio:
             "16 / 9",
-
           background:
             "#EDF4FA",
-
           overflow:
             "hidden",
-
           display: "flex",
-
           alignItems:
             "center",
-
           justifyContent:
             "center",
         }}
@@ -215,10 +270,8 @@ export default function ProjectCard({
           style={{
             width: "100%",
             height: "100%",
-
             objectFit:
               "contain",
-
             display:
               "block",
           }}
@@ -234,67 +287,66 @@ export default function ProjectCard({
           padding: isMobile
             ? 20
             : 28,
-
           display: "flex",
-
           flexDirection:
             "column",
-
           flex: 1,
         }}
       >
         <Paragraph
           style={{
             fontSize: 16,
-
             lineHeight: 1.7,
-
             color:
               "#4b5563",
-
-            marginBottom: 20,
+            marginBottom:
+              learningSkills.length >
+              0
+                ? 20
+                : 26,
           }}
         >
           {project.description}
         </Paragraph>
 
         {/* =================================================
-            SKILLS
+            LEARNING / DESIGN SKILLS
         ================================================= */}
 
-        <Space
-          wrap
-          size={[6, 8]}
-          style={{
-            marginBottom: 26,
-          }}
-        >
-          {project.skills.map(
-            (skill) => (
-              <Tag
-                key={skill}
-                style={{
-                  padding:
-                    "3px 9px",
-
-                  borderRadius:
-                    999,
-
-                  border:
-                    "none",
-
-                  background:
-                    "#EDF4FA",
-
-                  color:
-                    "#164A7B",
-                }}
-              >
-                {skill}
-              </Tag>
-            )
-          )}
-        </Space>
+        {learningSkills.length >
+          0 && (
+          <Space
+            wrap
+            size={[6, 8]}
+            style={{
+              marginBottom: 26,
+            }}
+          >
+            {learningSkills.map(
+              (skill) => (
+                <Tag
+                  key={skill}
+                  style={{
+                    margin: 0,
+                    padding:
+                      "3px 9px",
+                    borderRadius:
+                      999,
+                    border:
+                      "none",
+                    background:
+                      "#F3F6F9",
+                    color:
+                      "#5B6775",
+                    fontSize: 12,
+                  }}
+                >
+                  {skill}
+                </Tag>
+              )
+            )}
+          </Space>
+        )}
 
         {/* =================================================
             ACTIONS

@@ -1,12 +1,72 @@
 // src/data/projects.js
 
+import excelFormulaQuestImage from "../assets/projects/excel-formula-quest.png";
+import apiFundamentalsImage from "../assets/api-fundamentals/weather-api-lab.png";
 import sqlFoundationsImage from "../assets/projects/sql-foundations.png";
 import satVocabularyImage from "../assets/projects/sat-vocabulary.png";
 import customerServiceImage from "../assets/projects/customer-service.png";
 import hospitalSafetyImage from "../assets/projects/hospital-safety.png";
-import apiFundamentalsImage from "../assets/api-fundamentals/weather-api-lab.png";
 
 export const projects = [
+  {
+    id: "excel-formula-quest",
+
+    title: "Excel Formula Quest",
+
+    category: "Storyline + Custom React Learning Experience",
+
+    description:
+      "A blended technical learning experience that introduces Excel formulas through guided Storyline instruction and practice, then transitions learners into a custom React game to apply SUM, AVERAGE, and IF in spreadsheet-based challenges.",
+
+    skills: [
+      "Articulate Storyline",
+      "React",
+      "JavaScript",
+      "Gamification",
+      "Interactive Learning",
+    ],
+
+    image: excelFormulaQuestImage,
+
+    liveUrl:
+      "/excel-formula-quest/story.html",
+
+    demoUrl:
+      "https://excel-quest-formula-adventure.vercel.app/",
+
+    caseStudyPath:
+      "/projects/excel-formula-quest",
+  },
+
+  {
+    id: "api-fundamentals",
+
+    title: "API Fundamentals",
+
+    category: "Interactive Technical eLearning",
+
+    description:
+      "A Rise 360 technical learning experience that teaches API requests, HTTP methods, responses, and troubleshooting through progressive practice, interactive simulation, and scenario-based diagnosis.",
+
+    skills: [
+      "Rise 360",
+      "JavaScript",
+      "API Fundamentals",
+      "Scenario-Based Learning",
+      "Troubleshooting",
+    ],
+
+    image: apiFundamentalsImage,
+
+    liveUrl:
+      "/api-fundamentals/index.html",
+
+    demoUrl: "",
+
+    caseStudyPath:
+      "/projects/api-fundamentals",
+  },
+
   {
     id: "sql-foundations",
 
@@ -63,35 +123,6 @@ export const projects = [
 
     caseStudyPath:
       "/projects/sat-vocabulary",
-  },
-
-  {
-    id: "api-fundamentals",
-
-    title: "API Fundamentals",
-
-    category: "Interactive Technical eLearning",
-
-    description:
-      "A Rise 360 technical learning experience that teaches API requests, HTTP methods, responses, and troubleshooting through progressive practice, interactive simulation, and scenario-based diagnosis.",
-
-    skills: [
-      "Rise 360",
-      "JavaScript",
-      "API Fundamentals",
-      "Scenario-Based Learning",
-      "Troubleshooting",
-    ],
-
-    image: apiFundamentalsImage,
-
-    liveUrl:
-      "/api-fundamentals/index.html",
-
-    demoUrl: "",
-
-    caseStudyPath:
-      "/projects/api-fundamentals",
   },
 
   {
