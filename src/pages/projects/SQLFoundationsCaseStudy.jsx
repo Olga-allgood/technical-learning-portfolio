@@ -1,4 +1,4 @@
-// src/pages/projects/SQLFoundationsCaseStudy.jsx
+// src/pages/projects/ExcelFormulaQuestCaseStudy.jsx
 
 import {
   Button,
@@ -16,6 +16,7 @@ import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
   ExportOutlined,
+  PlayCircleOutlined,
 } from "@ant-design/icons";
 
 import { useNavigate } from "react-router-dom";
@@ -23,12 +24,10 @@ import { track } from "@vercel/analytics";
 
 import PortfolioHeader from "../../components/PortfolioHeader";
 
-import learningArchitecture from "../../assets/sql-case-study/01-learning-architecture.png";
-import knowledgeCard from "../../assets/sql-case-study/02-learn-knowledge-card.png";
-import buildQuery from "../../assets/sql-case-study/04-build-the-query.png";
-import sqlDetective from "../../assets/sql-case-study/05-apply-sql-detective.png";
-import learningAnalytics from "../../assets/sql-case-study/06-learning-analytics.png";
-import adaptiveRecommendation from "../../assets/sql-case-study/07-adaptive-recommendation.png";
+import goalImage from "../../assets/excel-formula-quest/excel-formula-quest-goal-how-formulas-work.png";
+import chooseFormulaImage from "../../assets/excel-formula-quest/excel-formula-quest-process-choose-formula.png";
+import reactGameImage from "../../assets/excel-formula-quest/excel-formula-quest-process-react-game.png";
+import resultImage from "../../assets/excel-formula-quest/excel-formula-quest-result-play-game.png";
 
 const { Content, Footer } = Layout;
 const { Title, Text, Paragraph } = Typography;
@@ -48,19 +47,33 @@ const STANDARD_IMAGE_HEIGHT = 300;
    COMPONENT
 ========================================================= */
 
-export default function SQLFoundationsCaseStudy() {
+export default function ExcelFormulaQuestCaseStudy() {
   const navigate = useNavigate();
 
   const screens = Grid.useBreakpoint();
   const isMobile = !screens.md;
 
-  const openProject = () => {
+  const openCourse = () => {
     track("Experience Project", {
-      project: "SQL Foundations Lab",
+      project: "Excel Formula Quest",
+      experience: "Storyline Course",
     });
 
     window.open(
-      "https://sql-foundations-lab.vercel.app/",
+      "/excel-formula-quest/story.html",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const openGame = () => {
+    track("Experience Project", {
+      project: "Excel Formula Quest",
+      experience: "React Game",
+    });
+
+    window.open(
+      "https://excel-quest-formula-adventure.vercel.app/",
       "_blank",
       "noopener,noreferrer"
     );
@@ -86,7 +99,9 @@ export default function SQLFoundationsCaseStudy() {
               : "48px 40px 88px",
           }}
         >
-          {/* BACK */}
+          {/* =================================================
+              BACK
+          ================================================= */}
 
           <Button
             type="link"
@@ -100,7 +115,9 @@ export default function SQLFoundationsCaseStudy() {
             Back to Portfolio
           </Button>
 
-          {/* HERO */}
+          {/* =================================================
+              HERO
+          ================================================= */}
 
           <Text
             strong
@@ -113,7 +130,7 @@ export default function SQLFoundationsCaseStudy() {
               marginBottom: 7,
             }}
           >
-            Technical Learning & Analytics Case Study
+            Storyline + React Technical Learning Case Study
           </Text>
 
           <Title
@@ -126,7 +143,7 @@ export default function SQLFoundationsCaseStudy() {
               marginBottom: 12,
             }}
           >
-            SQL Foundations Lab
+            Excel Formula Quest
           </Title>
 
           <Paragraph
@@ -138,14 +155,15 @@ export default function SQLFoundationsCaseStudy() {
               marginBottom: 24,
             }}
           >
-            A custom React learning system that combines
-            scaffolded SQL practice, mastery analytics, and
-            targeted recommendations to move beginners from
-            syntax recognition toward independent problem
-            solving.
+            A short Excel learning experience that combines
+            Articulate Storyline 360 instruction with a custom React
+            game to move learners from understanding formula structure
+            to applying SUM, AVERAGE, and IF in spreadsheet challenges.
           </Paragraph>
 
-          {/* QUICK SUMMARY */}
+          {/* =================================================
+              QUICK SUMMARY
+          ================================================= */}
 
           <Card
             style={{
@@ -159,40 +177,52 @@ export default function SQLFoundationsCaseStudy() {
               <Col xs={24} md={8}>
                 <MetaItem
                   label="Audience"
-                  value="Beginning SQL learners"
+                  value="Beginning Excel learners"
                 />
               </Col>
 
               <Col xs={24} md={8}>
                 <MetaItem
                   label="Technology"
-                  value="React · JavaScript · SQL · Ant Design"
+                  value="Articulate Storyline 360 · React · JavaScript"
                 />
               </Col>
 
               <Col xs={24} md={8}>
                 <MetaItem
-                  label="Learning System"
-                  value="Scaffolding · Mastery Analytics · Gamification · Targeted Practice"
+                  label="Learning Approach"
+                  value="Scaffolding · Guided Practice · Feedback · Gamification"
                 />
               </Col>
             </Row>
           </Card>
 
-          <Button
-            type="primary"
-            size="large"
-            icon={<ExportOutlined />}
-            onClick={openProject}
-          >
-            Experience the Project
-          </Button>
+          <Space wrap>
+            <Button
+              type="primary"
+              size="large"
+              icon={<ExportOutlined />}
+              onClick={openCourse}
+            >
+              Experience the Course
+            </Button>
 
-          {/* 01 — LEARNING PROBLEM */}
+            <Button
+              size="large"
+              icon={<PlayCircleOutlined />}
+              onClick={openGame}
+            >
+              Play the React Game
+            </Button>
+          </Space>
+
+          {/* =================================================
+              01 — GOAL
+          ================================================= */}
 
           <CaseSection
             number="01"
-            title="The Learning Problem"
+            title="The Learning Goal"
           >
             <Paragraph
               style={{
@@ -201,14 +231,11 @@ export default function SQLFoundationsCaseStudy() {
                 marginBottom: 0,
               }}
             >
-              Beginners may recognize{" "}
-              <Text code>SELECT</Text>,{" "}
-              <Text code>WHERE</Text>, and{" "}
-              <Text code>GROUP BY</Text> without being able
-              to construct queries or use SQL to solve a
-              problem. I designed the experience to bridge
-              that gap through progressively more independent
-              practice.
+              Beginners may recognize Excel functions without
+              understanding how a formula is structured or knowing
+              which function to use in a real spreadsheet. I designed
+              the experience to build that understanding before asking
+              learners to apply formulas independently.
             </Paragraph>
 
             <Card
@@ -226,296 +253,138 @@ export default function SQLFoundationsCaseStudy() {
                   fontSize: 12,
                   textTransform: "uppercase",
                   letterSpacing: "0.6px",
-                  marginBottom: 6,
+                  marginBottom: 8,
                 }}
               >
                 Learning Progression
               </Text>
 
-              <Title
-                level={4}
-                style={{
-                  color: blue,
-                  margin: 0,
-                  lineHeight: 1.5,
-                }}
-              >
-                Recognition → Construction → Application →
-                Independent Problem Solving
-              </Title>
+              <ProgressionFlow
+                items={[
+                  "Understand",
+                  "Explore",
+                  "Choose",
+                  "Apply",
+                ]}
+              />
             </Card>
+
+            <LargeScreenshotFrame
+              image={goalImage}
+              alt="How Formulas Work Storyline slide showing formula structure and spreadsheet example"
+              maxWidth={820}
+            />
           </CaseSection>
 
-          {/* 02 — LEARNING SYSTEM */}
+          {/* =================================================
+              02 — PROCESS
+          ================================================= */}
 
           <CaseSection
             number="02"
-            title="Scaffolded Practice"
+            title="Designing the Practice"
           >
-            <Row
-              gutter={[36, 28]}
-              align="middle"
+            <Paragraph
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 850,
+              }}
             >
-              <Col xs={24} md={9}>
-                <ScreenshotFrame
-                  image={learningArchitecture}
-                  alt="SQL learning architecture showing seven SQL skill areas"
+              I used Storyline for the parts of the experience that
+              benefit from structured guidance: concept explanation,
+              formula exploration, decision-making, and immediate
+              feedback. After learners practiced selecting the correct
+              function, I moved them into a custom React game for
+              applied practice.
+            </Paragraph>
+
+            <Row
+              gutter={[24, 24]}
+              align="stretch"
+              style={{
+                marginTop: 28,
+              }}
+            >
+              <Col xs={24} md={12}>
+                <PracticeCard
+                  label="Articulate Storyline 360"
+                  title="Guided Formula Selection"
+                  description="Learners interpret a spreadsheet problem, select the appropriate formula, and receive immediate feedback."
+                  image={chooseFormulaImage}
+                  alt="Storyline activity asking learners to choose the correct Excel formula"
+                  imageHeight={250}
                   isMobile={isMobile}
                 />
               </Col>
 
-              <Col xs={24} md={15}>
-                <Paragraph style={bodyTextStyle}>
-                  I organized SQL Foundations into seven
-                  focused skill areas and used the same
-                  progression within each one:
-                </Paragraph>
-
-                <ProgressionTags />
-
-                <Paragraph
-                  style={{
-                    ...bodyTextStyle,
-                    marginBottom: 0,
-                  }}
-                >
-                  Support decreases as learners move from
-                  explanation and recognition toward
-                  construction, application, analysis, and
-                  challenge activities.
-                </Paragraph>
+              <Col xs={24} md={12}>
+                <PracticeCard
+                  label="React + JavaScript"
+                  title="Applied Formula Challenge"
+                  description="The custom game places learners in spreadsheet scenarios where formulas become tools for solving a problem."
+                  image={reactGameImage}
+                  alt="React Excel game asking learners to determine target status using the IF function"
+                  imageHeight={250}
+                  isMobile={isMobile}
+                />
               </Col>
             </Row>
-
-            {/* LEARN / BUILD / APPLY */}
-
-            <div
-              style={{
-                marginTop: 36,
-              }}
-            >
-              <Title
-                level={4}
-                style={{
-                  color: blue,
-                  marginBottom: 18,
-                }}
-              >
-                From Understanding to Application
-              </Title>
-
-              <Row
-                gutter={[18, 22]}
-                align="top"
-              >
-                <Col xs={24} md={8}>
-                  <StageCard
-                    number="1"
-                    title="Learn"
-                    subtitle="Build the mental model"
-                    image={knowledgeCard}
-                  />
-                </Col>
-
-                <Col xs={24} md={8}>
-                  <StageCard
-                    number="2"
-                    title="Build"
-                    subtitle="Construct query structure"
-                    image={buildQuery}
-                  />
-                </Col>
-
-                <Col xs={24} md={8}>
-                  <StageCard
-                    number="3"
-                    title="Apply"
-                    subtitle="Solve a data problem"
-                    image={sqlDetective}
-                  />
-                </Col>
-              </Row>
-
-              <Card
-                style={{
-                  border: "none",
-                  background: lightBlue,
-                  marginTop: 24,
-                }}
-              >
-                <Paragraph
-                  style={{
-                    margin: 0,
-                    color: textColor,
-                    fontSize: 16,
-                    lineHeight: 1.7,
-                  }}
-                >
-                  Hints support retrying, while only
-                  independently solved tasks contribute to
-                  mastery. XP, progress indicators, and themed
-                  activities make skill development visible.
-                </Paragraph>
-              </Card>
-            </div>
-          </CaseSection>
-
-          {/* 03 — LEARNING ANALYTICS */}
-
-          <CaseSection
-            number="03"
-            title="Learning Analytics"
-          >
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                maxWidth: 850,
-              }}
-            >
-              Instead of tracking completion alone, the
-              system records independently solved tasks and
-              converts performance into mastery metrics
-              across the seven SQL skill areas.
-            </Paragraph>
-
-            <LargeScreenshotFrame
-              image={learningAnalytics}
-              alt="SQL learning analytics dashboard showing mastery across SQL skills"
-            />
-
-            <FlowCard>
-              <FlowStep>
-                Practice
-              </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Performance Data
-              </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Skill Mastery
-              </FlowStep>
-            </FlowCard>
-          </CaseSection>
-
-          {/* 04 — TARGETED PRACTICE */}
-
-          <CaseSection
-            number="04"
-            title="From Analytics to Targeted Practice"
-          >
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                maxWidth: 850,
-              }}
-            >
-              Mastery data does more than describe progress.
-              When the system identifies a weaker skill area,
-              it recommends what to practice next and links
-              the learner directly to the relevant activity.
-            </Paragraph>
-
-            <LargeScreenshotFrame
-              image={adaptiveRecommendation}
-              alt="Targeted SQL practice recommendation based on learner mastery"
-              maxWidth={880}
-            />
-
-            <FlowCard>
-              <FlowStep>
-                Practice
-              </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Measure
-              </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Identify Need
-              </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Recommend
-              </FlowStep>
-
-              <ArrowRightOutlined />
-
-              <FlowStep>
-                Practice Again
-              </FlowStep>
-            </FlowCard>
-          </CaseSection>
-
-          {/* 05 — TECHNICAL IMPLEMENTATION */}
-
-          <CaseSection
-            number="05"
-            title="Technical Implementation"
-          >
-            <Paragraph
-              style={{
-                ...bodyTextStyle,
-                maxWidth: 850,
-              }}
-            >
-              I built the experience as a responsive React
-              application. Reusable components manage
-              learning activities, feedback, mastery logic,
-              analytics, and recommendation behavior.
-            </Paragraph>
-
-            <Space
-              wrap
-              size={[8, 8]}
-              style={{
-                marginTop: 4,
-                marginBottom: 20,
-              }}
-            >
-              {[
-                "React",
-                "JavaScript",
-                "Ant Design",
-                "SQL",
-                "Local Storage",
-                "Learning Analytics",
-                "Vite",
-                "Vercel",
-              ].map(
-                (item) => (
-                  <Tag
-                    key={item}
-                    style={{
-                      border: "none",
-                      background:
-                        "#EDF4FA",
-                      color:
-                        "#164A7B",
-                      padding:
-                        "5px 10px",
-                    }}
-                  >
-                    {item}
-                  </Tag>
-                )
-              )}
-            </Space>
 
             <Card
               style={{
                 border: "none",
                 background: lightBlue,
+                marginTop: 24,
+              }}
+            >
+              <Paragraph
+                style={{
+                  margin: 0,
+                  color: textColor,
+                  fontSize: 16,
+                  lineHeight: 1.7,
+                }}
+              >
+                The technology choice follows the learning task:
+                Storyline provides structured support and feedback,
+                while React extends the experience into custom,
+                game-based application.
+              </Paragraph>
+            </Card>
+          </CaseSection>
+
+          {/* =================================================
+              03 — RESULT
+          ================================================= */}
+
+          <CaseSection
+            number="03"
+            title="The Integrated Experience"
+          >
+            <Paragraph
+              style={{
+                ...bodyTextStyle,
+                maxWidth: 850,
+              }}
+            >
+              The finished module connects the two environments into
+              one learning sequence. Learners begin with guided
+              instruction and practice in Storyline, then launch the
+              React game when they are ready to apply the same formulas
+              in new spreadsheet challenges.
+            </Paragraph>
+
+            <LargeScreenshotFrame
+              image={resultImage}
+              alt="Formula Challenge Storyline slide that launches the React game"
+              maxWidth={820}
+            />
+
+            <Card
+              style={{
+                border: "none",
+                background: lightBlue,
+                marginTop: 24,
               }}
             >
               <Text
@@ -526,35 +395,61 @@ export default function SQLFoundationsCaseStudy() {
                   fontSize: 12,
                   textTransform: "uppercase",
                   letterSpacing: "0.6px",
-                  marginBottom: 6,
+                  marginBottom: 10,
                 }}
               >
-                System Architecture
+                Experience Flow
               </Text>
 
-              <Paragraph
-                style={{
-                  margin: 0,
-                  color: textColor,
-                  fontSize: 16,
-                  lineHeight: 1.7,
-                }}
-              >
-                Learner activity → stored progress →
-                mastery metrics → analytics dashboard →
-                targeted recommendation
-              </Paragraph>
+              <ProgressionFlow
+                items={[
+                  "Learn in Storyline",
+                  "Practice",
+                  "Launch Game",
+                  "Apply in React",
+                ]}
+              />
             </Card>
+
+            <Space
+              wrap
+              size={[8, 8]}
+              style={{
+                marginTop: 22,
+              }}
+            >
+              {[
+                "Articulate Storyline 360",
+                "React",
+                "JavaScript",
+                "Vite",
+                "Vercel",
+                "Gamification",
+              ].map((item) => (
+                <Tag
+                  key={item}
+                  style={{
+                    border: "none",
+                    background: "#EDF4FA",
+                    color: "#164A7B",
+                    padding: "5px 10px",
+                  }}
+                >
+                  {item}
+                </Tag>
+              ))}
+            </Space>
           </CaseSection>
 
-          {/* CTA */}
+          {/* =================================================
+              CTA
+          ================================================= */}
 
           <div
             style={{
               marginTop: 56,
               paddingTop: 28,
-              borderTop:
-                "1px solid #e5e7eb",
+              borderTop: "1px solid #e5e7eb",
             }}
           >
             <Space wrap>
@@ -562,17 +457,23 @@ export default function SQLFoundationsCaseStudy() {
                 type="primary"
                 size="large"
                 icon={<ExportOutlined />}
-                onClick={openProject}
+                onClick={openCourse}
               >
-                Experience the Project
+                Experience the Course
+              </Button>
+
+              <Button
+                size="large"
+                icon={<PlayCircleOutlined />}
+                onClick={openGame}
+              >
+                Play the React Game
               </Button>
 
               <Button
                 size="large"
                 icon={<ArrowLeftOutlined />}
-                onClick={() =>
-                  navigate("/")
-                }
+                onClick={() => navigate("/")}
               >
                 Back to Portfolio
               </Button>
@@ -581,14 +482,15 @@ export default function SQLFoundationsCaseStudy() {
         </main>
       </Content>
 
-      {/* FOOTER */}
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
 
       <Footer
         style={{
           textAlign: "center",
           background: "#fafafa",
-          borderTop:
-            "1px solid #f0f0f0",
+          borderTop: "1px solid #f0f0f0",
         }}
       >
         <Text type="secondary">
@@ -625,10 +527,8 @@ function MetaItem({
           display: "block",
           color: mediumBlue,
           fontSize: 12,
-          textTransform:
-            "uppercase",
-          letterSpacing:
-            "0.6px",
+          textTransform: "uppercase",
+          letterSpacing: "0.6px",
           marginBottom: 4,
         }}
       >
@@ -668,8 +568,7 @@ function CaseSection({
           display: "block",
           color: mediumBlue,
           fontSize: 12,
-          letterSpacing:
-            "0.8px",
+          letterSpacing: "0.8px",
           marginBottom: 4,
         }}
       >
@@ -693,28 +592,19 @@ function CaseSection({
 }
 
 /* =========================================================
-   PROGRESSION
+   PROGRESSION FLOW
 ========================================================= */
 
-function ProgressionTags() {
-  const items = [
-    "Learn",
-    "Recognize",
-    "Build",
-    "Apply",
-    "Analyze",
-    "Challenge",
-  ];
-
+function ProgressionFlow({
+  items,
+}) {
   return (
     <div
       style={{
         display: "flex",
-        flexWrap: "wrap",
         alignItems: "center",
-        gap: 8,
-        marginTop: 14,
-        marginBottom: 20,
+        flexWrap: "wrap",
+        gap: 10,
       }}
     >
       {items.map(
@@ -722,36 +612,26 @@ function ProgressionTags() {
           <div
             key={item}
             style={{
-              display:
-                "flex",
-              alignItems:
-                "center",
-              gap: 8,
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
             }}
           >
-            <Tag
+            <Text
+              strong
               style={{
-                border:
-                  "none",
-                background:
-                  lightBlue,
                 color: blue,
-                padding:
-                  "5px 10px",
-                margin: 0,
-                fontWeight:
-                  600,
+                fontSize: 15,
               }}
             >
               {item}
-            </Tag>
+            </Text>
 
             {index <
               items.length - 1 && (
               <ArrowRightOutlined
                 style={{
-                  color:
-                    mediumBlue,
+                  color: mediumBlue,
                   fontSize: 11,
                 }}
               />
@@ -764,73 +644,25 @@ function ProgressionTags() {
 }
 
 /* =========================================================
-   SCREENSHOT FRAME
+   PRACTICE CARD
 ========================================================= */
 
-function ScreenshotFrame({
+function PracticeCard({
+  label,
+  title,
+  description,
   image,
   alt,
-  isMobile = false,
-}) {
-  return (
-    <div
-      style={{
-        width: "100%",
-        background:
-          "#EEF4F9",
-        padding: 10,
-        borderRadius: 14,
-        boxShadow:
-          "0 6px 20px rgba(30, 70, 110, 0.07)",
-        display: "flex",
-        alignItems:
-          "center",
-        justifyContent:
-          "center",
-        overflow:
-          "hidden",
-      }}
-    >
-      <img
-        src={image}
-        alt={alt}
-        style={{
-          height: isMobile
-            ? "auto"
-            : STANDARD_IMAGE_HEIGHT,
-          width: isMobile
-            ? "100%"
-            : "auto",
-          maxWidth: "100%",
-          objectFit:
-            "contain",
-          display:
-            "block",
-          borderRadius: 8,
-        }}
-      />
-    </div>
-  );
-}
-
-/* =========================================================
-   STAGE CARD
-========================================================= */
-
-function StageCard({
-  number,
-  title,
-  subtitle,
-  image,
+  imageHeight,
+  isMobile,
 }) {
   return (
     <Card
       style={{
+        height: "100%",
         border: "none",
-        background:
-          lightBlue,
-        overflow:
-          "hidden",
+        background: lightBlue,
+        overflow: "hidden",
       }}
       styles={{
         body: {
@@ -840,58 +672,78 @@ function StageCard({
     >
       <div
         style={{
-          padding:
-            "16px 16px 12px",
+          padding: 10,
+          background: "#EEF4F9",
+        }}
+      >
+        <div
+          style={{
+            height: isMobile
+              ? "auto"
+              : imageHeight,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+            background: "#ffffff",
+            borderRadius: 8,
+          }}
+        >
+          <img
+            src={image}
+            alt={alt}
+            style={{
+              width: "100%",
+              height: isMobile
+                ? "auto"
+                : "100%",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </div>
+      </div>
+
+      <div
+        style={{
+          padding: 18,
         }}
       >
         <Text
           strong
           style={{
-            display:
-              "block",
-            color:
-              mediumBlue,
+            display: "block",
+            color: mediumBlue,
             fontSize: 11,
-            marginBottom: 3,
+            textTransform: "uppercase",
+            letterSpacing: "0.6px",
+            marginBottom: 5,
           }}
         >
-          {number}
+          {label}
         </Text>
 
         <Title
           level={4}
           style={{
             color: blue,
-            margin: 0,
+            marginTop: 0,
+            marginBottom: 8,
           }}
         >
           {title}
         </Title>
 
-        <Text type="secondary">
-          {subtitle}
-        </Text>
-      </div>
-
-      <div
-        style={{
-          background:
-            "#ffffff",
-          padding: 8,
-        }}
-      >
-        <img
-          src={image}
-          alt={`${title} activity`}
+        <Paragraph
           style={{
-            width: "100%",
-            height: 175,
-            objectFit:
-              "contain",
-            display:
-              "block",
+            margin: 0,
+            color: textColor,
+            fontSize: 15,
+            lineHeight: 1.65,
           }}
-        />
+        >
+          {description}
+        </Paragraph>
       </div>
     </Card>
   );
@@ -911,16 +763,13 @@ function LargeScreenshotFrame({
       style={{
         width: "100%",
         maxWidth,
-        margin:
-          "26px auto 0",
+        margin: "26px auto 0",
         padding: 10,
-        background:
-          "#EEF4F9",
+        background: "#EEF4F9",
         borderRadius: 14,
         boxShadow:
           "0 6px 20px rgba(30, 70, 110, 0.07)",
-        overflow:
-          "hidden",
+        overflow: "hidden",
       }}
     >
       <img
@@ -929,69 +778,12 @@ function LargeScreenshotFrame({
         style={{
           width: "100%",
           height: "auto",
-          display:
-            "block",
-          objectFit:
-            "contain",
+          maxHeight: STANDARD_IMAGE_HEIGHT,
+          display: "block",
+          objectFit: "contain",
           borderRadius: 8,
         }}
       />
     </div>
-  );
-}
-
-/* =========================================================
-   FLOW CARD
-========================================================= */
-
-function FlowCard({
-  children,
-}) {
-  return (
-    <Card
-      style={{
-        border: "none",
-        background:
-          lightBlue,
-        marginTop: 22,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems:
-            "center",
-          justifyContent:
-            "center",
-          flexWrap: "wrap",
-          gap: 12,
-          color: blue,
-          textAlign:
-            "center",
-        }}
-      >
-        {children}
-      </div>
-    </Card>
-  );
-}
-
-/* =========================================================
-   FLOW STEP
-========================================================= */
-
-function FlowStep({
-  children,
-}) {
-  return (
-    <Text
-      strong
-      style={{
-        color: blue,
-        fontSize: 15,
-      }}
-    >
-      {children}
-    </Text>
   );
 }
