@@ -1,121 +1,39 @@
 // src/pages/Home.jsx
 
 import {
-  useEffect,
-} from "react";
-
-import {
-  Button,
+  Card,
   Col,
   Grid,
   Layout,
   Row,
   Space,
+  Tag,
   Typography,
 } from "antd";
 
 import {
-  ArrowRightOutlined,
-  LinkedinOutlined,
-  MailOutlined,
+  BookOutlined,
+  CodeOutlined,
+  DatabaseOutlined,
+  PlayCircleOutlined,
 } from "@ant-design/icons";
 
-import {
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
-
-import {
-  track,
-} from "@vercel/analytics";
-
-import PortfolioHeader from "../components/PortfolioHeader";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
+import PortfolioHeader from "../components/PortfolioHeader";
+import { projects } from "../data/projects";
 
-import {
-  projects,
-} from "../data/projects";
+const { Content, Footer } = Layout;
+const { Title, Text, Paragraph } = Typography;
 
-const {
-  Content,
-  Footer,
-} = Layout;
-
-const {
-  Title,
-  Paragraph,
-  Text,
-} = Typography;
+const blue = "#173B63";
+const mediumBlue = "#4E79A7";
+const lightBlue = "#F4F8FC";
+const textColor = "#4b5563";
 
 export default function Home() {
-  const navigate =
-    useNavigate();
-
-  const location =
-    useLocation();
-
-  const screens =
-    Grid.useBreakpoint();
-
-  const isMobile =
-    !screens.md;
-
-  /* =========================================================
-     SCROLL TO HASH SECTION
-  ========================================================= */
-
-  useEffect(() => {
-    if (!location.hash) {
-      return;
-    }
-
-    const sectionId =
-      location.hash.replace(
-        "#",
-        ""
-      );
-
-    const timeout =
-      setTimeout(() => {
-        document
-          .getElementById(
-            sectionId
-          )
-          ?.scrollIntoView({
-            behavior:
-              "smooth",
-
-            block:
-              "start",
-          });
-      }, 0);
-
-    return () =>
-      clearTimeout(timeout);
-  }, [location]);
-
-  /* =========================================================
-     CONTACT ANALYTICS
-  ========================================================= */
-
-  const handleEmailClick = () => {
-    track(
-      "Contact Click",
-      {
-        method: "Email",
-      }
-    );
-  };
-
-  const handleLinkedInClick = () => {
-    track(
-      "Contact Click",
-      {
-        method: "LinkedIn",
-      }
-    );
-  };
+  const screens = Grid.useBreakpoint();
+  const isMobile = !screens.md;
 
   return (
     <Layout
@@ -127,56 +45,46 @@ export default function Home() {
       <PortfolioHeader />
 
       <Content>
-        {/* =================================================
+        {/* =====================================================
             HERO
-        ================================================= */}
+        ===================================================== */}
+
+        <Hero />
 
         <main
           style={{
             width: "100%",
-            maxWidth: 1200,
+            maxWidth: 1100,
             margin: "0 auto",
-
             padding: isMobile
-              ? "0 16px"
-              : "0 40px",
+              ? "42px 18px 64px"
+              : "64px 40px 88px",
           }}
         >
-          <Hero />
-        </main>
+          {/* =====================================================
+              FEATURED PROJECTS
+          ===================================================== */}
 
-        {/* =================================================
-            FEATURED PROJECTS
-        ================================================= */}
+          <section id="projects">
+            <Text
+              strong
+              style={{
+                display: "block",
+                color: mediumBlue,
+                fontSize: 12,
+                letterSpacing: "0.8px",
+                marginBottom: 5,
+              }}
+            >
+              PORTFOLIO
+            </Text>
 
-        <section
-          id="projects"
-          style={{
-            scrollMarginTop: 90,
-
-            background:
-              "#F4F8FC",
-
-            padding: isMobile
-              ? "52px 16px 64px"
-              : "70px 40px 84px",
-          }}
-        >
-          <div
-            style={{
-              width: "100%",
-              maxWidth: 1120,
-              margin: "0 auto",
-            }}
-          >
             <Title
               level={2}
               style={{
+                color: blue,
                 marginTop: 0,
-                marginBottom: 10,
-
-                color:
-                  "#173B63",
+                marginBottom: 8,
               }}
             >
               Featured Projects
@@ -184,222 +92,288 @@ export default function Home() {
 
             <Paragraph
               style={{
-                maxWidth: 720,
-                marginBottom: 32,
-
-                fontSize: isMobile
-                  ? 15
-                  : 16,
-
+                maxWidth: 760,
+                fontSize: 17,
                 lineHeight: 1.7,
-
-                color:
-                  "#667085",
+                color: textColor,
+                marginBottom: 30,
               }}
             >
-              Interactive learning experiences
-              combining instructional design,
-              technical curriculum development,
-              and custom learning technology.
+              Interactive learning experiences combining
+              instructional design, technical curriculum
+              development, and custom learning technology.
             </Paragraph>
 
-            <Row
-              gutter={[28, 28]}
-              align="stretch"
-            >
-              {projects.map(
-                (project) => (
-                  <Col
-                    key={
-                      project.id
-                    }
-                    xs={24}
-                    lg={12}
-                    style={{
-                      display:
-                        "flex",
-                    }}
-                  >
-                    <ProjectCard
-                      project={
-                        project
-                      }
-                    />
-                  </Col>
-                )
-              )}
+            <Row gutter={[24, 24]}>
+              {projects.map((project) => (
+                <Col
+                  xs={24}
+                  md={12}
+                  key={project.id}
+                >
+                  <ProjectCard project={project} />
+                </Col>
+              ))}
             </Row>
-          </div>
-        </section>
+          </section>
 
-        {/* =================================================
-            ABOUT
-        ================================================= */}
+          {/* =====================================================
+              CAPABILITIES & TOOLS
+          ===================================================== */}
 
-        <main
-          style={{
-            width: "100%",
-            maxWidth: 1200,
-            margin: "0 auto",
-
-            padding: isMobile
-              ? "0 16px"
-              : "0 40px",
-          }}
-        >
           <section
-            id="about"
             style={{
-              maxWidth: 820,
-
-              scrollMarginTop: 90,
-
-              padding: isMobile
-                ? "56px 0"
-                : "72px 0",
+              marginTop: isMobile ? 60 : 80,
             }}
           >
+            <Text
+              strong
+              style={{
+                display: "block",
+                color: mediumBlue,
+                fontSize: 12,
+                letterSpacing: "0.8px",
+                marginBottom: 5,
+              }}
+            >
+              CAPABILITIES & TOOLS
+            </Text>
+
             <Title
               level={2}
               style={{
+                color: blue,
                 marginTop: 0,
-                marginBottom: 14,
-
-                color:
-                  "#173B63",
+                marginBottom: 10,
               }}
             >
-              About
+              Designing and Building Learning Experiences
             </Title>
 
             <Paragraph
               style={{
-                fontSize: isMobile
-                  ? 16
-                  : 17,
-
-                lineHeight: 1.75,
-
-                color:
-                  "#4b5563",
-
-                marginBottom: 22,
+                maxWidth: 800,
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: textColor,
+                marginBottom: 28,
               }}
             >
-              I’m a Technical Instructional
-              Designer and Learning Engineer
-              who designs and builds practical,
-              interactive learning experiences.
-              My work combines instructional
-              strategy with custom development,
-              technical curriculum, AI, learner
-              data, and modern learning
-              technologies.
+              I work across instructional design, authoring
+              tools, custom development, AI, data, and multimedia
+              to create practical learning experiences.
             </Paragraph>
 
-            <Button
-              type="primary"
-              onClick={() =>
-                navigate(
-                  "/about"
-                )
-              }
-            >
-              More About Me
-              <ArrowRightOutlined />
-            </Button>
+            <Row gutter={[18, 18]}>
+              {/* LEARNING DESIGN */}
+
+              <Col xs={24} md={12}>
+                <CapabilityCard
+                  icon={<BookOutlined />}
+                  title="Learning Design"
+                  description="Designing structured, learner-centered experiences from learning goals through practice and assessment."
+                  tools={[
+                    "Instructional Design",
+                    "Technical Curriculum",
+                    "Scaffolding",
+                    "Scenario-Based Learning",
+                    "Assessment Design",
+                  ]}
+                />
+              </Col>
+
+              {/* AUTHORING & VIDEO */}
+
+              <Col xs={24} md={12}>
+                <CapabilityCard
+                  icon={<PlayCircleOutlined />}
+                  title="Authoring & Video"
+                  description="Creating interactive eLearning and polished multimedia experiences using industry-standard development tools."
+                  tools={[
+                    "Articulate Storyline",
+                    "Rise 360",
+                    "Adobe Captivate",
+                    "Camtasia",
+                  ]}
+                />
+              </Col>
+
+              {/* LEARNING ENGINEERING */}
+
+              <Col xs={24} md={12}>
+                <CapabilityCard
+                  icon={<CodeOutlined />}
+                  title="Learning Engineering"
+                  description="Building custom learning applications and simulations when traditional authoring tools are not enough."
+                  tools={[
+                    "React",
+                    "JavaScript",
+                    "TypeScript",
+                    "Next.js",
+                    "Interactive Simulations",
+                  ]}
+                />
+              </Col>
+
+              {/* AI & DATA */}
+
+              <Col xs={24} md={12}>
+                <CapabilityCard
+                  icon={<DatabaseOutlined />}
+                  title="AI & Data"
+                  description="Using learner data and AI to support targeted practice, personalization, and learning insights."
+                  tools={[
+                    "AI-Supported Learning",
+                    "Learning Analytics",
+                    "SQL",
+                    "APIs",
+                    "Data-Informed Practice",
+                  ]}
+                />
+              </Col>
+            </Row>
           </section>
 
-          {/* =================================================
+          {/* =====================================================
+              ABOUT
+          ===================================================== */}
+
+          <section
+            id="about"
+            style={{
+              marginTop: isMobile ? 60 : 80,
+            }}
+          >
+            <Text
+              strong
+              style={{
+                display: "block",
+                color: mediumBlue,
+                fontSize: 12,
+                letterSpacing: "0.8px",
+                marginBottom: 5,
+              }}
+            >
+              ABOUT
+            </Text>
+
+            <Title
+              level={2}
+              style={{
+                color: blue,
+                marginTop: 0,
+                marginBottom: 16,
+              }}
+            >
+              About Me
+            </Title>
+
+            <Paragraph
+              style={{
+                maxWidth: 850,
+                fontSize: 17,
+                lineHeight: 1.8,
+                color: textColor,
+                marginBottom: 0,
+              }}
+            >
+              I’m a Technical Instructional Designer and
+              Learning Engineer who designs and builds practical,
+              interactive learning experiences. My work combines
+              instructional strategy with custom development,
+              technical curriculum, AI, learner data, and modern
+              learning technologies.
+            </Paragraph>
+          </section>
+
+          {/* =====================================================
               CONTACT
-          ================================================= */}
+          ===================================================== */}
 
           <section
             id="contact"
             style={{
-              scrollMarginTop: 90,
-
-              paddingBottom: 80,
+              marginTop: isMobile ? 60 : 80,
             }}
           >
-            <Title
-              level={2}
+            <Card
               style={{
-                color:
-                  "#173B63",
-
-                marginBottom: 10,
+                border: "none",
+                background: lightBlue,
+                borderRadius: 16,
               }}
             >
-              Contact
-            </Title>
-
-            <Paragraph
-              style={{
-                maxWidth: 620,
-
-                fontSize: isMobile
-                  ? 16
-                  : 17,
-
-                lineHeight: 1.7,
-
-                color:
-                  "#4b5563",
-
-                marginBottom: 20,
-              }}
-            >
-              Interested in working together or
-              discussing technical learning,
-              learning engineering, or
-              instructional design? I’d be happy
-              to connect.
-            </Paragraph>
-
-            <Space
-              wrap
-              size={12}
-            >
-              <Button
-                type="primary"
-                icon={
-                  <MailOutlined />
-                }
-                href="mailto:olga.s.orlova@gmail.com"
-                onClick={
-                  handleEmailClick
-                }
+              <Title
+                level={3}
+                style={{
+                  color: blue,
+                  marginTop: 0,
+                  marginBottom: 10,
+                }}
               >
-                Email Me
-              </Button>
+                Let’s Connect
+              </Title>
 
-              <Button
-                icon={
-                  <LinkedinOutlined />
-                }
-                href="https://www.linkedin.com/in/orlovaolga/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={
-                  handleLinkedInClick
-                }
+              <Paragraph
+                style={{
+                  maxWidth: 720,
+                  fontSize: 17,
+                  lineHeight: 1.7,
+                  color: textColor,
+                  marginBottom: 18,
+                }}
               >
-                LinkedIn
-              </Button>
-            </Space>
+                Interested in working together or discussing
+                technical learning, learning engineering, or
+                instructional design? I’d be happy to connect.
+              </Paragraph>
 
-            <Paragraph
-              style={{
-                marginTop: 18,
-                marginBottom: 0,
+              <Space
+                wrap
+                size={isMobile ? 12 : 28}
+                style={{
+                  fontSize: 16,
+                }}
+              >
+                {/* EMAIL */}
 
-                color:
-                  "#667085",
-              }}
-            >
-              olga.s.orlova@gmail.com
-            </Paragraph>
+                <Text
+                  style={{
+                    fontSize: 16,
+                  }}
+                >
+                  <strong>Email:</strong>{" "}
+                  <a
+                    href="mailto:olga.s.orlova@gmail.com"
+                    style={{
+                      color: mediumBlue,
+                    }}
+                  >
+                    olga.s.orlova@gmail.com
+                  </a>
+                </Text>
+
+                {/* LINKEDIN */}
+
+                <Text
+                  style={{
+                    fontSize: 16,
+                  }}
+                >
+                  <strong>LinkedIn:</strong>{" "}
+                  <a
+                    href="https://www.linkedin.com/in/orlovaolga/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: mediumBlue,
+                    }}
+                  >
+                    linkedin.com/in/orlovaolga
+                  </a>
+                </Text>
+              </Space>
+            </Card>
           </section>
         </main>
       </Content>
@@ -410,20 +384,94 @@ export default function Home() {
 
       <Footer
         style={{
-          textAlign:
-            "center",
-
-          background:
-            "#fafafa",
-
-          borderTop:
-            "1px solid #f0f0f0",
+          textAlign: "center",
+          background: "#fafafa",
+          borderTop: "1px solid #f0f0f0",
         }}
       >
         <Text type="secondary">
-          © Olga Orlova
+          © 2026 Olga Orlova
         </Text>
       </Footer>
     </Layout>
+  );
+}
+
+/* =========================================================
+   CAPABILITY CARD
+========================================================= */
+
+function CapabilityCard({
+  icon,
+  title,
+  description,
+  tools,
+}) {
+  return (
+    <Card
+      style={{
+        height: "100%",
+        borderRadius: 14,
+        border: "1px solid #e7edf3",
+      }}
+    >
+      <Space
+        align="start"
+        size={14}
+      >
+        <div
+          style={{
+            fontSize: 24,
+            color: mediumBlue,
+            lineHeight: 1,
+            marginTop: 3,
+          }}
+        >
+          {icon}
+        </div>
+
+        <div>
+          <Title
+            level={4}
+            style={{
+              color: blue,
+              marginTop: 0,
+              marginBottom: 8,
+            }}
+          >
+            {title}
+          </Title>
+
+          <Paragraph
+            style={{
+              color: textColor,
+              lineHeight: 1.65,
+              marginBottom: 14,
+            }}
+          >
+            {description}
+          </Paragraph>
+
+          <Space
+            wrap
+            size={[7, 7]}
+          >
+            {tools.map((tool) => (
+              <Tag
+                key={tool}
+                style={{
+                  border: "none",
+                  background: "#EDF4FA",
+                  color: "#164A7B",
+                  padding: "4px 9px",
+                }}
+              >
+                {tool}
+              </Tag>
+            ))}
+          </Space>
+        </div>
+      </Space>
+    </Card>
   );
 }
