@@ -1,5 +1,6 @@
 // src/data/projects.js
 
+import mathAdventureImage from "../assets/projects/math-adventure.png";
 import excelFormulaQuestImage from "../assets/projects/excel-formula-quest.png";
 import apiFundamentalsImage from "../assets/api-fundamentals/weather-api-lab.png";
 import sqlFoundationsImage from "../assets/projects/sql-foundations.png";
@@ -7,7 +8,37 @@ import satVocabularyImage from "../assets/projects/sat-vocabulary.png";
 import customerServiceImage from "../assets/projects/customer-service.png";
 import hospitalSafetyImage from "../assets/projects/hospital-safety.png";
 
+
 export const projects = [
+  {
+    id: "math-adventure",
+
+    title: "Math Adventure",
+
+    category: "Visual Math Learning Game",
+
+    description:
+      "A custom React learning game for Grades 3–4 that uses visual models, progressive scaffolding, formative feedback, and game-based challenges to help learners build conceptual understanding across multiplication, place value, addition, and subtraction.",
+
+    skills: [
+      "React",
+      "JavaScript",
+      "Instructional Design",
+      "Scaffolding",
+      "Gamification",
+    ],
+
+    image: mathAdventureImage,
+
+    liveUrl:
+      "https://multiplication-adventure.vercel.app/",
+
+    demoUrl: "",
+
+    caseStudyPath:
+      "/projects/math-adventure",
+  },
+
   {
     id: "excel-formula-quest",
 
@@ -16,7 +47,7 @@ export const projects = [
     category: "Storyline + Custom React Learning Experience",
 
     description:
-      "A blended technical learning experience that introduces Excel formulas through guided Storyline instruction and practice, then transitions learners into a custom React game to apply SUM, AVERAGE, and IF in spreadsheet-based challenges.",
+      "A blended technical learning experience that introduces Excel formulas through guided Storyline instruction, then transitions learners into a custom React game to apply SUM, AVERAGE, and IF through interactive spreadsheet challenges.",
 
     skills: [
       "Articulate Storyline",

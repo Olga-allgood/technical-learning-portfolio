@@ -145,7 +145,7 @@ export default function Hero() {
             >
               Technical Instructional
               Designer & Learning
-              Technologist
+              Engineer
             </Title>
 
             {/* DESCRIPTION */}
@@ -162,7 +162,7 @@ export default function Hero() {
 
                 lineHeight: 1.7,
 
-                maxWidth: 600,
+                maxWidth: 610,
 
                 marginLeft: isMobile
                   ? "auto"
@@ -173,13 +173,14 @@ export default function Hero() {
                   : 0,
               }}
             >
-              I design interactive
-              learning experiences that
-              combine instructional
-              design, technology, and
-              hands-on practice to help
-              learners build practical
-              skills.
+              I design and build
+              interactive learning
+              experiences that combine
+              instructional design,
+              custom development, and
+              learning technology to
+              help learners build
+              practical skills.
             </Paragraph>
 
             {/* BUTTON */}

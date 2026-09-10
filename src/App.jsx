@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
+import MathAdventureCaseStudy from "./pages/projects/MathAdventureCaseStudy";
 import ExcelFormulaQuestCaseStudy from "./pages/projects/ExcelFormulaQuestCaseStudy";
 import APIFundamentalsCaseStudy from "./pages/projects/APIFundamentalsCaseStudy";
 import SQLFoundationsCaseStudy from "./pages/projects/SQLFoundationsCaseStudy";
@@ -20,6 +21,11 @@ function App() {
       <Route path="/about" element={<About />} />
 
       {/* Project Case Studies */}
+
+      <Route
+        path="/projects/math-adventure"
+        element={<MathAdventureCaseStudy />}
+      />
 
       <Route
         path="/projects/excel-formula-quest"

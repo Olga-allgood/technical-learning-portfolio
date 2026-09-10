@@ -173,7 +173,7 @@ export default function Home() {
               level={2}
               style={{
                 marginTop: 0,
-                marginBottom: 32,
+                marginBottom: 10,
 
                 color:
                   "#173B63",
@@ -181,6 +181,27 @@ export default function Home() {
             >
               Featured Projects
             </Title>
+
+            <Paragraph
+              style={{
+                maxWidth: 720,
+                marginBottom: 32,
+
+                fontSize: isMobile
+                  ? 15
+                  : 16,
+
+                lineHeight: 1.7,
+
+                color:
+                  "#667085",
+              }}
+            >
+              Interactive learning experiences
+              combining instructional design,
+              technical curriculum development,
+              and custom learning technology.
+            </Paragraph>
 
             <Row
               gutter={[28, 28]}
@@ -265,13 +286,15 @@ export default function Home() {
                 marginBottom: 22,
               }}
             >
-              I design learning experiences at the
-              intersection of instructional design,
-              learning technology, and software
-              development. My work combines learning
-              strategy with custom development, AI,
-              learner data, and industry-standard
-              eLearning tools.
+              I’m a Technical Instructional
+              Designer and Learning Engineer
+              who designs and builds practical,
+              interactive learning experiences.
+              My work combines instructional
+              strategy with custom development,
+              technical curriculum, AI, learner
+              data, and modern learning
+              technologies.
             </Paragraph>
 
             <Button
@@ -328,9 +351,10 @@ export default function Home() {
               }}
             >
               Interested in working together or
-              discussing technical learning and
-              instructional design? I’d be happy to
-              connect.
+              discussing technical learning,
+              learning engineering, or
+              instructional design? I’d be happy
+              to connect.
             </Paragraph>
 
             <Space
