@@ -100,6 +100,24 @@ export default function ProjectCard({
   };
 
   /* =========================================================
+     CASE STUDY
+  ========================================================= */
+
+  const handleViewCaseStudy = () => {
+    track(
+      "View Project Case Study",
+      {
+        project:
+          project.title,
+      }
+    );
+
+    navigate(
+      project.caseStudyPath
+    );
+  };
+
+  /* =========================================================
      DEMO
   ========================================================= */
 
@@ -116,24 +134,6 @@ export default function ProjectCard({
       project.demoUrl,
       "_blank",
       "noopener,noreferrer"
-    );
-  };
-
-  /* =========================================================
-     CASE STUDY
-  ========================================================= */
-
-  const handleViewCaseStudy = () => {
-    track(
-      "View Project Case Study",
-      {
-        project:
-          project.title,
-      }
-    );
-
-    navigate(
-      project.caseStudyPath
     );
   };
 
@@ -354,23 +354,53 @@ export default function ProjectCard({
 
         <Space
           wrap
-          size="middle"
+          size={[
+            isMobile ? 8 : 12,
+            10,
+          ]}
           style={{
             marginTop:
               "auto",
           }}
         >
-          <Button
-            type="primary"
-            icon={
-              <ExportOutlined />
-            }
-            onClick={
-              handleViewProject
-            }
-          >
-            View Project
-          </Button>
+          {/* 1. VIEW PROJECT */}
+
+          {project.liveUrl && (
+            <Button
+              type="primary"
+              icon={
+                <ExportOutlined />
+              }
+              onClick={
+                handleViewProject
+              }
+            >
+              View Project
+            </Button>
+          )}
+
+          {/* 2. DESIGN PROCESS */}
+
+          {project.caseStudyPath && (
+            <Button
+              type="link"
+              icon={
+                <ReadOutlined />
+              }
+              onClick={
+                handleViewCaseStudy
+              }
+              style={{
+                paddingLeft: 4,
+                paddingRight: 4,
+              }}
+            >
+              Design Process
+              <ArrowRightOutlined />
+            </Button>
+          )}
+
+          {/* 3. 1-MIN DEMO */}
 
           {project.demoUrl && (
             <Button
@@ -382,21 +412,6 @@ export default function ProjectCard({
               }
             >
               1-Min Demo
-            </Button>
-          )}
-
-          {project.caseStudyPath && (
-            <Button
-              type="link"
-              icon={
-                <ReadOutlined />
-              }
-              onClick={
-                handleViewCaseStudy
-              }
-            >
-              Design Process
-              <ArrowRightOutlined />
             </Button>
           )}
         </Space>

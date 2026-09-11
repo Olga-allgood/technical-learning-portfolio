@@ -8,7 +8,6 @@ import satVocabularyImage from "../assets/projects/sat-vocabulary.png";
 import customerServiceImage from "../assets/projects/customer-service.png";
 import hospitalSafetyImage from "../assets/projects/hospital-safety.png";
 
-
 export const projects = [
   {
     id: "math-adventure",
@@ -33,7 +32,8 @@ export const projects = [
     liveUrl:
       "https://multiplication-adventure.vercel.app/",
 
-    demoUrl: "",
+    demoUrl:
+      "/videos/math-adventure-demo.mp4",
 
     caseStudyPath:
       "/projects/math-adventure",
@@ -63,7 +63,7 @@ export const projects = [
       "/excel-formula-quest/story.html",
 
     demoUrl:
-      "https://excel-quest-formula-adventure.vercel.app/",
+      "/videos/excel-formula-quest-demo.mp4",
 
     caseStudyPath:
       "/projects/excel-formula-quest",
@@ -92,7 +92,8 @@ export const projects = [
     liveUrl:
       "/api-fundamentals/index.html",
 
-    demoUrl: "",
+    demoUrl:
+      "/videos/api-fundamentals-demo.mp4",
 
     caseStudyPath:
       "/projects/api-fundamentals",
@@ -121,7 +122,8 @@ export const projects = [
     liveUrl:
       "https://sql-foundations-lab.vercel.app/",
 
-    demoUrl: "",
+    demoUrl:
+      "/videos/sql-foundations-demo.mp4",
 
     caseStudyPath:
       "/projects/sql-foundations",
@@ -150,7 +152,8 @@ export const projects = [
     liveUrl:
       "https://new-sat-builder-hw4o.vercel.app/",
 
-    demoUrl: "",
+    demoUrl:
+      "/videos/sat-vocabulary-demo.mp4",
 
     caseStudyPath:
       "/projects/sat-vocabulary",
@@ -179,7 +182,8 @@ export const projects = [
     liveUrl:
       "https://storage.googleapis.com/olgaorlovainstructionaldesign/UPDATED%20Coffee%20shop%20-%20Storyline%20output/story.html",
 
-    demoUrl: "",
+    demoUrl:
+      "/videos/customer-service-demo.mp4",
 
     caseStudyPath:
       "/projects/customer-service",
@@ -207,7 +211,8 @@ export const projects = [
     liveUrl:
       "https://storage.googleapis.com/olgaorlovainstructionaldesign/Hospital%20Safety%20Training%20May.cpt/Hospital%20Safety%20Training%20May.cpt/index.html",
 
-    demoUrl: "",
+    demoUrl:
+      "/videos/hospital-safety-demo.mp4",
 
     caseStudyPath:
       "/projects/hospital-safety",
