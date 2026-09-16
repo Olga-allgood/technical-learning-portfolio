@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 
 import MathAdventureCaseStudy from "./pages/projects/MathAdventureCaseStudy";
+import ExcelQuestCaseStudy from "./pages/projects/ExcelQuestCaseStudy";
 import ExcelFormulaQuestCaseStudy from "./pages/projects/ExcelFormulaQuestCaseStudy";
 import APIFundamentalsCaseStudy from "./pages/projects/APIFundamentalsCaseStudy";
 import SQLFoundationsCaseStudy from "./pages/projects/SQLFoundationsCaseStudy";
@@ -16,17 +17,36 @@ import HospitalSafetyCaseStudy from "./pages/projects/HospitalSafetyCaseStudy";
 function App() {
   return (
     <Routes>
-      {/* Main Pages */}
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      {/* =====================================================
+          MAIN PAGES
+      ===================================================== */}
 
-      {/* Project Case Studies */}
+      <Route
+        path="/"
+        element={<Home />}
+      />
+
+      <Route
+        path="/about"
+        element={<About />}
+      />
+
+      {/* =====================================================
+          PROJECT CASE STUDIES
+      ===================================================== */}
 
       <Route
         path="/projects/math-adventure"
         element={<MathAdventureCaseStudy />}
       />
 
+      {/* NEW: COMPLETE EXCEL FORMULA LEARNING SYSTEM */}
+      <Route
+        path="/projects/excel-quest"
+        element={<ExcelQuestCaseStudy />}
+      />
+
+      {/* ORIGINAL: STORYLINE + REACT EXCEL PROJECT */}
       <Route
         path="/projects/excel-formula-quest"
         element={<ExcelFormulaQuestCaseStudy />}

@@ -1,6 +1,7 @@
 // src/data/projects.js
 
 import mathAdventureImage from "../assets/projects/math-adventure.png";
+import excelQuestImage from "../assets/excel-quest/excel-quest-curriculum-map.png";
 import excelFormulaQuestImage from "../assets/projects/excel-formula-quest.png";
 import apiFundamentalsImage from "../assets/api-fundamentals/weather-api-lab.png";
 import sqlFoundationsImage from "../assets/projects/sql-foundations.png";
@@ -37,6 +38,34 @@ export const projects = [
 
     caseStudyPath:
       "/projects/math-adventure",
+  },
+
+  {
+    id: "excel-quest",
+
+    title: "Excel Quest",
+
+    category: "Interactive Excel Foundations Learning System",
+
+    description:
+      "A comprehensive Excel formula foundations learning system that builds practical fluency across core calculations, business logic, lookups, data cleanup, and data analysis through progressive practice, retrieval, scaffolded feedback, and gamified challenges.",
+
+    skills: [
+      "React",
+      "JavaScript",
+      "Instructional Design",
+      "Retrieval Practice",
+      "Scaffolding",
+      "Gamification",
+    ],
+
+    image: excelQuestImage,
+
+    liveUrl:
+      "https://excel-complete-game.vercel.app/",
+
+    caseStudyPath:
+      "/projects/excel-quest",
   },
 
   {
