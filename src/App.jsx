@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
+import FormulaQuestPrivacy from "./pages/FormulaQuestPrivacy";
 
 import MathAdventureCaseStudy from "./pages/projects/MathAdventureCaseStudy";
 import ExcelQuestCaseStudy from "./pages/projects/ExcelQuestCaseStudy";
@@ -29,6 +30,15 @@ function App() {
       <Route
         path="/about"
         element={<About />}
+      />
+
+      {/* =====================================================
+          PRIVACY POLICY
+      ===================================================== */}
+
+      <Route
+        path="/privacy/formula-quest"
+        element={<FormulaQuestPrivacy />}
       />
 
       {/* =====================================================
